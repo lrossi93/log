@@ -9,7 +9,7 @@ appStore: "https://..."    # optional, shows an App Store link
                             # instead of to its own page; also used to
                             # infer website/github links if not set above
 summary: "Sito della mia band trad folk."
-tags: ["test"]
+tags: ["music", "piping", "angular", "google-api"]
 discontinued: false                    # optional
 # discontinuedDate: "2025-01-01"          # optional
 discontinuedReason: "Why it ended."   # optional, markdown

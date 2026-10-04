@@ -1,126 +1,466 @@
-<!doctype html><html lang=it><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Hugo: primi passi · log.lrossi.xyz</title><meta name=title content="Hugo: primi passi · log.lrossi.xyz"><meta name=description content="Used for <meta description> / OpenGraph if summary is empty."><link rel=canonical href=https://log.lrossi.xyz/posts/primi-passi-con-hugo/><meta property="og:site_name" content="log.lrossi.xyz"><meta property="og:type" content="article"><meta property="og:url" content="https://log.lrossi.xyz/posts/primi-passi-con-hugo/"><meta property="og:title" content="Hugo: primi passi · log.lrossi.xyz"><meta property="og:description" content="Used for <meta description> / OpenGraph if summary is empty."><meta property="og:image" content="https://log.lrossi.xyz/favicon/android-chrome-512x512.png"><meta property="og:image:width" content="512"><meta property="og:image:height" content="512"><meta property="article:published_time" content="2026-09-28T00:00:00Z"><meta property="article:modified_time" content="2026-09-28T00:00:00Z"><meta property="article:tag" content="hugo"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Hugo: primi passi · log.lrossi.xyz"><meta name=twitter:description content="Used for <meta description> / OpenGraph if summary is empty."><meta name=twitter:image content="https://log.lrossi.xyz/favicon/android-chrome-512x512.png"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Hugo: primi passi","description":"Used for \u003cmeta description\u003e / OpenGraph if summary is empty.","url":"https:\/\/log.lrossi.xyz\/posts\/primi-passi-con-hugo\/","datePublished":"2026-09-28T00:00:00Z","dateModified":"2026-09-28T00:00:00Z","image":"https:\/\/log.lrossi.xyz\/favicon\/android-chrome-512x512.png","mainEntityOfPage":"https:\/\/log.lrossi.xyz\/posts\/primi-passi-con-hugo\/","author":{"@id":"https:\/\/log.lrossi.xyz\/#person"},"publisher":{"@id":"https:\/\/log.lrossi.xyz\/#person"}}</script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Silkscreen:wght@400;700&display=swap" rel=stylesheet><link rel=stylesheet href=/css/main.min.7916bc087f5c7718c9d8cb1d2e989d7c1091596b84aa2c50a06e06190ea015fd.css integrity="sha256-eRa8CH9cdxjJ2MsdLpidfBCRWWuEqixQoG4GGQ6gFf0="><script>(function(){var t,e=null;try{e=localStorage.getItem("theme")}catch{}t=e||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"),document.documentElement.setAttribute("data-theme",t)})()</script></head><body><div class=shell><header class=mobile-header><a class="mobile-header-title logo-letters" href=/><span style=--i:0>l</span><span style=--i:1>o</span><span style=--i:2>g</span><span style=--i:3>.</span><span style=--i:4>l</span><span style=--i:5>r</span><span style=--i:6>o</span><span style=--i:7>s</span><span style=--i:8>s</span><span style=--i:9>i</span><span style=--i:10>.</span><span style=--i:11>x</span><span style=--i:12>y</span><span style=--i:13>z</span></a>
-<button type=button id=sidebar-toggle class=hamburger aria-label="Open menu" aria-expanded=false aria-controls=sidebar>
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg></button></header><div id=sidebar-backdrop class=sidebar-backdrop hidden></div><aside class=sidebar id=sidebar><div class=sidebar-top><h1 class=site-title><a href=/ class=logo-letters><span style=--i:0>l</span><span style=--i:1>o</span><span style=--i:2>g</span><span style=--i:3>.</span><span style=--i:4>l</span><span style=--i:5>r</span><span style=--i:6>o</span><span style=--i:7>s</span><span style=--i:8>s</span><span style=--i:9>i</span><span style=--i:10>.</span><span style=--i:11>x</span><span style=--i:12>y</span><span style=--i:13>z</span></a></h1><p class=bio>Musician, programmer, creative time waster.</p><p class=bio>Raccolgo qui idee, riflessioni e progetti che non interessano a nessuno.</p><div class=sidebar-tools><button type=button id=search-open aria-label=Search>
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-<span>Search</span></button></div><div class=sidebar-links><a href=/><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+<!doctype html>
+<html lang="it"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hugo: primi passi · log.lrossi.xyz</title>
+  <meta name="title" content="Hugo: primi passi · log.lrossi.xyz" />
+  <meta name="description" content="Used for &lt;meta description&gt; / OpenGraph if summary is empty." />
+  <link rel="canonical" href="http://localhost:1313/posts/primi-passi-con-hugo/" />
+
+  <meta property="og:site_name" content="log.lrossi.xyz" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://localhost:1313/posts/primi-passi-con-hugo/" />
+  <meta property="og:title" content="Hugo: primi passi · log.lrossi.xyz" />
+  <meta property="og:description" content="Used for &lt;meta description&gt; / OpenGraph if summary is empty." />
+  <meta property="og:image" content="http://localhost:1313/favicon/android-chrome-512x512.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="article:published_time" content="2026-09-28T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-09-28T00:00:00Z" />
+  <meta property="article:tag" content="hugo" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hugo: primi passi · log.lrossi.xyz" />
+  <meta name="twitter:description" content="Used for &lt;meta description&gt; / OpenGraph if summary is empty." />
+  <meta name="twitter:image" content="http://localhost:1313/favicon/android-chrome-512x512.png" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Hugo: primi passi",
+      "description": "Used for \u003cmeta description\u003e / OpenGraph if summary is empty.",
+      "url": "http:\/\/localhost:1313\/posts\/primi-passi-con-hugo\/",
+      "datePublished": "2026-09-28T00:00:00Z",
+      "dateModified": "2026-09-28T00:00:00Z",
+      "image": "http:\/\/localhost:1313\/favicon\/android-chrome-512x512.png",
+      "mainEntityOfPage": "http:\/\/localhost:1313\/posts\/primi-passi-con-hugo\/",
+      "author": { "@id": "http:\/\/localhost:1313\/#person" },
+      "publisher": { "@id": "http:\/\/localhost:1313\/#person" }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.min.7916bc087f5c7718c9d8cb1d2e989d7c1091596b84aa2c50a06e06190ea015fd.css" integrity="sha256-eRa8CH9cdxjJ2MsdLpidfBCRWWuEqixQoG4GGQ6gFf0=" />
+
+  <script>
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem("theme"); } catch (e) {}
+      var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+
+
+
+</head>
+
+<body>
+  <div class="shell">
+    <header class="mobile-header">
+  <a class="mobile-header-title logo-letters" href="/"><span style="--i:0">l</span><span style="--i:1">o</span><span style="--i:2">g</span><span style="--i:3">.</span><span style="--i:4">l</span><span style="--i:5">r</span><span style="--i:6">o</span><span style="--i:7">s</span><span style="--i:8">s</span><span style="--i:9">i</span><span style="--i:10">.</span><span style="--i:11">x</span><span style="--i:12">y</span><span style="--i:13">z</span></a>
+  <button type="button" id="sidebar-toggle" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+
+  </button>
+</header>
+
+<div id="sidebar-backdrop" class="sidebar-backdrop" hidden></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <h1 class="site-title"><a href="/" class="logo-letters"><span style="--i:0">l</span><span style="--i:1">o</span><span style="--i:2">g</span><span style="--i:3">.</span><span style="--i:4">l</span><span style="--i:5">r</span><span style="--i:6">o</span><span style="--i:7">s</span><span style="--i:8">s</span><span style="--i:9">i</span><span style="--i:10">.</span><span style="--i:11">x</span><span style="--i:12">y</span><span style="--i:13">z</span></a></h1>
+    <p class="bio">Musician, programmer, creative time waster.</p>
+    <p class="bio">Raccolgo qui idee, riflessioni e progetti che non interessano a nessuno.</p>
+    <div class="sidebar-tools">
+      <button type="button" id="search-open" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+
+        <span>Search</span>
+      </button>
+    </div>
+
+    <div class="sidebar-links">
+      <a href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
 <span>Home</span></a>
-<a href=https://github.com/lrossi93 target=_blank rel="me noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
+      <a href="https://github.com/lrossi93" target="_blank" rel="me noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
 <span>GitHub</span></a>
-<a href=https://www.linkedin.com/in/lrossi1993 target=_blank rel="me noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4m-4-7v7"/></svg>
+      <a href="https://www.linkedin.com/in/lrossi1993" target="_blank" rel="me noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7"/></svg>
 <span>LinkedIn</span></a>
-<a href=mailto:lrossi93@proton.me target=_blank rel="me noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      <a href="mailto:lrossi93@proton.me" target="_blank" rel="me noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
 <span>e-mail</span></a>
-<a href=/index.xml><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg>
-<span>RSS</span></a></div></div><div class=sidebar-bottom><div class=sidebar-links><a href=/tags/><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83.0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+      <a href="/index.xml"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg>
+<span>RSS</span></a>
+    </div>
+  </div>
+
+  <div class="sidebar-bottom">
+    <div class="sidebar-links">
+      <a href="/tags/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L13.42 20.58a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
 <span>Tags</span></a>
-<button type=button id=theme-toggle aria-label="Toggle color theme">
-<span class=icon-sun><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-</span><span class=icon-moon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-</span><span class=theme-toggle-label>Theme</span></button></div><div class=sidebar-footer>&copy; 2026 log.lrossi.xyz</div></div></aside><main class=content><article class=article><header class=article-header id=top><h1 style=view-transition-name:vt-title-803cbc029d7094303fe8102b4adb06a0>Hugo: primi passi</h1><div class=article-meta><time datetime=2026-09-28>28 September 2026</time>
-<span class=meta-sep>&#183;</span>
-<span>5 min read</span></div></header><button type=button id=toc-toggle class=toc-toggle aria-label="Table of contents" aria-expanded=false aria-controls=toc>
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg></button><nav class=toc id=toc><span class=toc-indicator aria-hidden=true></span>
-<a href=#introduzione class=toc-link>Introduzione</a>
-<a href=#primi-passi class=toc-link>Primi passi</a>
-<a href=#pubblicazione class=toc-link>Pubblicazione</a>
-<a href=#deploy class=toc-link>Deploy</a>
-<a href=#utilizzo-base class=toc-link>Utilizzo base</a>
-<a href=#struttura-a-directory class=toc-link>Struttura a directory</a>
-<a href=#temi class=toc-link>Temi</a>
-<a href=#risorse-esterne class=toc-link>Risorse esterne</a></nav><div class=prose><h2 id=introduzione>Introduzione</h2><p>Questo è il primo di una serie di articoli sul mio viaggio nella tecnologia. In questo, parlerò di <a href=https://gohugo.io target=_blank rel="noopener noreferrer">Hugo</a>
-, di come ho conosciuto il framework e di come lo potrei utilizzare per progetti personali.</p><p>L&rsquo;obiettivo di questo esperimento è puramente didattico, pertanto cercherò il più possibile di non utilizzare tool AI di alcun genere, per quanto i loro prodotti siano sempre più impeccabili e, oggettivamente, facciano risparmiare ore per lavori ripetitivi.</p><p>Il tono con cui cercherò di parlare sarà a metà strada tra il pub e la formalità, ma tratterò questo progetto come una guida scritta da me stesso e rivolta a me stesso. Spero, comunque, che possa essere utile a qualcuno.</p><h2 id=primi-passi>Primi passi</h2><p>Per prima cosa, ho seguito la guida <a href=https://gohugo.io/getting-started/quick-start/ target=_blank rel="noopener noreferrer">quickstart</a>
-di Hugo, che mi ha permesso di avviare l&rsquo;infrastruttura e di creare questo primo post. Al momento sto gestendo il progetto da due finestre di terminale: una con cui ho avviato il server Hugo e l&rsquo;altra con cui organizzo i contenuti.</p><p>Trovo molto comodo lanciare il server con il comando</p><p><code>hugo server --buildDrafts</code></p><p>grazie a cui la renderizzazione della pagina web corrispondente all&rsquo;articolo che sto scrivendo è praticamente istantanea.</p><h3 id=configurazione>Configurazione</h3><p>Ho installato il tema <a href=https://github.com/omegion/hugo-omegion target=_blank rel="noopener noreferrer">Omegion</a>
-, scelto tra i vari temi disponibili per Hugo. Magari, quando avrò una maggiore comprensione di tutte le parti in gioco in un sito Hugo, riuscirò a creare il mio tema, potenzialmente in accordo con lo stesso tema grafico del mio sito.</p><p>Dopodiché, ho modificato la configurazione generale del progetto Hugo, impostando baseURL, locale, titolo e tema.</p><h2 id=pubblicazione>Pubblicazione</h2><p>La documentazione ci tiene a marcare la differenza tra <em>pubblicazione</em> e <em>deploy</em>. La pubblicazione, che avviene semplicemente col comando <code>hugo</code> nella working directory, permette il rendering di tutti i file realizzati per comporre il materiale web finale (HTML, CSS, asset vari, JS). I file renderizzati verranno collocati nella directory <strong>public</strong> e verranno sovrascritti ad ogni nuova pubblicazione.</p><p>Dato che mi interessa che la cartella <strong>public</strong> venga ripulita ad ogni pubblicazione, ho modificato la configurazione della build di progetto con il codice seguente, aggiunto in coda al file <em>hugo.toml</em> (come indicato nella sezione di <a href=https://gohugo.io/configuration/build/#clean-destination-directory target=_blank rel="noopener noreferrer">build</a>
-di Hugo):</p><div class=code-block><div class=code-block-header><span class=code-block-lang>toml</span>
-<button type=button class=code-copy aria-label="Copy code">
-<span class=code-copy-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-</span><span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-</span><span class=code-copy-label>Copy</span></button></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-toml data-lang=toml><span style=display:flex><span>[<span style=color:#a6e22e>build</span>]
-</span></span><span style=display:flex><span>  [<span style=color:#a6e22e>build</span>.<span style=color:#a6e22e>cleanDestinationDir</span>]
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>enable</span> = <span style=color:#66d9ef>false</span>
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>keepDirs</span> = [<span style=color:#e6db74>&#39;{**/,}.*&#39;</span>]
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>keepFiles</span> = [<span style=color:#e6db74>&#39;{**/,}.{git,gitignore,gitattributes}&#39;</span>]</span></span></code></pre></div></div><p>Dopo aver pubblicato il sito con il comando <code>hugo</code>, la struttura della directory <code>public/</code> dovrebbe essere all&rsquo;incirca la seguente:</p><div class=code-block><div class=code-block-header><span class=code-block-lang>text</span>
-<button type=button class=code-copy aria-label="Copy code">
-<span class=code-copy-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-</span><span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-</span><span class=code-copy-label>Copy</span></button></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>public/
-</span></span><span style=display:flex><span>├── categories/
-</span></span><span style=display:flex><span>│   ├── index.html
-</span></span><span style=display:flex><span>│   └── index.xml  &lt;-- Feed RSS di questa sezione
-</span></span><span style=display:flex><span>├── posts/
-</span></span><span style=display:flex><span>│   ├── my-first-post/
-</span></span><span style=display:flex><span>│   │   └── index.html
-</span></span><span style=display:flex><span>│   ├── index.html
-</span></span><span style=display:flex><span>│   └── index.xml  &lt;-- Feed RSS di questa sezione
-</span></span><span style=display:flex><span>├── tags/
-</span></span><span style=display:flex><span>│   ├── index.html
-</span></span><span style=display:flex><span>│   └── index.xml  &lt;-- Feed RSS di questa sezione
-</span></span><span style=display:flex><span>├── index.html
-</span></span><span style=display:flex><span>├── index.xml      &lt;-- Feed RSS di questa sezione
-</span></span><span style=display:flex><span>└── sitemap.xml</span></span></code></pre></div></div><p>È molto interessante il fatto che venga renderizzata anche la <code>sitemap.xml</code>, è un aiuto in più per chi ha bisogno, ad esempio, di gestire la SEO.</p><h2 id=deploy>Deploy</h2><p>Uno dei passi successivi che vengono toccati è il deploy. Ci sono diversi modi di effettuare il deploy di un sito Hugo ma, a me, interessa il <a href=https://gohugo.io/host-and-deploy/host-on-github-pages/ target=_blank rel="noopener noreferrer">deploy con GitHub Pages</a>
-.</p><p>Considererò questa guida più avanti, quando avrò una maggiore comprensione dell&rsquo;infrastruttura.</p><h2 id=utilizzo-base>Utilizzo base</h2><p>Per questa sezione, ho proseguito nella documentazione con la pagina <a href=https://gohugo.io/getting-started/usage/ target=_blank rel="noopener noreferrer">Basic usage</a>
-.</p><p>La prima parte è un piccolo compendio su comandi base come <code>hugo version</code>, <code>hugo help</code>, <code>hugo server --help</code> e <code>hugo build</code>, tutti da lanciare nella working directory.</p><p>Poco oltre, c&rsquo;è una parte più interessante sulle <em>bozze</em>: in particolare, servendoci di appositi flag per ciascun articolo, è possibile considerarlo o meno per la pubblicazione del progetto.</p><p>Ogni articolo, quindi ogni &ldquo;foglia&rdquo; del ramo di filesystem che parte dalla working directory, è un file markdown (<code>.md</code>) che può avere quattro variabili: <code>draft</code>, <code>date</code>, <code>publishDate</code> e <code>expiryDate</code>.</p><h2 id=struttura-a-directory>Struttura a directory</h2><p>Ogni progetto Hugo è composto da directory in cui ci sono subdirectory che concorrono a contenuto, struttura, comportamento e presentazione.</p><p>Il comando</p><div class=code-block><div class=code-block-header><span class=code-block-lang>text</span>
-<button type=button class=code-copy aria-label="Copy code">
-<span class=code-copy-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-</span><span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-</span><span class=code-copy-label>Copy</span></button></div><pre tabindex=0><code>hugo new project log.lrossi.xyz</code></pre></div><p>crea una struttura come la seguente:</p><div class=code-block><div class=code-block-header><span class=code-block-lang>text</span>
-<button type=button class=code-copy aria-label="Copy code">
-<span class=code-copy-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-</span><span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-</span><span class=code-copy-label>Copy</span></button></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>my-project/
-</span></span><span style=display:flex><span>├── archetypes/
-</span></span><span style=display:flex><span>│   └── default.md
-</span></span><span style=display:flex><span>├── assets/
-</span></span><span style=display:flex><span>├── content/
-</span></span><span style=display:flex><span>├── data/
-</span></span><span style=display:flex><span>├── i18n/
-</span></span><span style=display:flex><span>├── layouts/
-</span></span><span style=display:flex><span>├── static/
-</span></span><span style=display:flex><span>├── themes/
-</span></span><span style=display:flex><span>└── hugo.toml         &lt;-- configurazione</span></span></code></pre></div></div><p>A seconda delle esigenze, questa struttura può essere personalizzata ma, a me, per il momento, va bene la struttura standard.</p><h3 id=directories>Directories</h3><p>Di seguito un breve riassunto dello scopo delle varie directory.</p><table><thead><tr><th>Directory</th><th>Contenuto</th></tr></thead><tbody><tr><td><strong>archetypes</strong></td><td>Template dei potenziali futuri contenuti.</td></tr><tr><td><strong>assets</strong></td><td>Immagini, CSS, Sass, JS e TS.</td></tr><tr><td><strong>config</strong></td><td>Configurazione di progetto ed eventuali subdirectory e file. Per progetti con configurazione minima, basta il file <code>hugo.toml</code>.</td></tr><tr><td><strong>content</strong></td><td>File <code>.md</code> delle pagine del progetto.</td></tr><tr><td><strong>data</strong></td><td>Configurazioni per contenuto, localizzazione e navigazione.</td></tr><tr><td><strong>i18n</strong></td><td>Tabelle di traduzione.</td></tr><tr><td><strong>layouts</strong></td><td>Modelli per utilizzare i contenuti per renderizzare il sito finale.</td></tr><tr><td><strong>public</strong></td><td>Sito web pubblicato, generato con comando <code>hugo build</code> o <code>hugo server</code>.</td></tr><tr><td><strong>resources</strong></td><td>Cache per i contenuti multimediali renderizzati con <code>hugo build</code>, principalmente CSS e immagini.</td></tr><tr><td><strong>static</strong></td><td>File che vengono copiati in <strong>public</strong> alla build (icone, immagini, CSS e JS).</td></tr><tr><td><strong>themes</strong></td><td>Uno o più temi, ciascuno nella sua subdirectory.</td></tr></tbody></table><h2 id=temi>Temi</h2><p>Il tema che ho inizialmente scelto per questo progetto è <a href=https://github.com/omegion/hugo-omegion target=_blank rel="noopener noreferrer">Omegion</a>
-, perchè ha un&rsquo;interfaccia minimal e molto rilassante, specialmente con il tema dark. Con l&rsquo;obiettivo di raccogliere post in varie categorie (cosa che, devo ancora capire come farsi), mi sembrava la scelta migliore.</p><p>Ad ogni modo, si può creare un nuovo tema da zero con il comando</p><p><code>hugo new theme theme-name</code></p><p>che risulta nella creazione del seguente ramo di file system:</p><div class=code-block><div class=code-block-header><span class=code-block-lang>text</span>
-<button type=button class=code-copy aria-label="Copy code">
-<span class=code-copy-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-</span><span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-</span><span class=code-copy-label>Copy</span></button></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>my-theme/
-</span></span><span style=display:flex><span>├── archetypes/
-</span></span><span style=display:flex><span>├── assets/
-</span></span><span style=display:flex><span>├── content/
-</span></span><span style=display:flex><span>├── data/
-</span></span><span style=display:flex><span>├── i18n/
-</span></span><span style=display:flex><span>├── layouts/
-</span></span><span style=display:flex><span>├── static/
-</span></span><span style=display:flex><span>└── hugo.toml</span></span></code></pre></div></div><p>Esiste la possibilità di gestire un file system unificato per due progetti Hugo, o per un progetto che sfrutti elementi di due temi diversi. Questo è possibile grazie a una configurazione da aggiungere in coda al file <code>hugo.toml</code>:</p><div class=code-block><div class=code-block-header><span class=code-block-lang>toml</span>
-<button type=button class=code-copy aria-label="Copy code">
-<span class=code-copy-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-</span><span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-</span><span class=code-copy-label>Copy</span></button></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-toml data-lang=toml><span style=display:flex><span>[<span style=color:#a6e22e>module</span>]
-</span></span><span style=display:flex><span>  [[<span style=color:#a6e22e>module</span>.<span style=color:#a6e22e>mounts</span>]]
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>source</span> = <span style=color:#e6db74>&#39;content&#39;</span> <span style=color:#75715e># riferito alla working directory</span>
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>target</span> = <span style=color:#e6db74>&#39;content&#39;</span>
-</span></span><span style=display:flex><span>  [[<span style=color:#a6e22e>module</span>.<span style=color:#a6e22e>mounts</span>]]
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>source</span> = <span style=color:#e6db74>&#39;/path/to/other/content&#39;</span> <span style=color:#75715e># riferito ad altra directory</span>
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>target</span> = <span style=color:#e6db74>&#39;content&#39;</span></span></span></code></pre></div></div><p>In questo modo, è possibile gestire progetti con file system più articolato, come ad esempio il seguente:</p><div class=code-block><div class=code-block-header><span class=code-block-lang>text</span>
-<button type=button class=code-copy aria-label="Copy code">
-<span class=code-copy-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-</span><span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-</span><span class=code-copy-label>Copy</span></button></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>home/
-</span></span><span style=display:flex><span>└── user/
-</span></span><span style=display:flex><span>    ├── my-project/
-</span></span><span style=display:flex><span>    │   ├── content/
-</span></span><span style=display:flex><span>    │   │   ├── books/
-</span></span><span style=display:flex><span>    │   │   │   ├── _index.md
-</span></span><span style=display:flex><span>    │   │   │   ├── book-1.md
-</span></span><span style=display:flex><span>    │   │   │   └── book-2.md
-</span></span><span style=display:flex><span>    │   │   └── _index.md
-</span></span><span style=display:flex><span>    │   ├── themes/
-</span></span><span style=display:flex><span>    │   │   └── my-theme/
-</span></span><span style=display:flex><span>    │   └── hugo.toml
-</span></span><span style=display:flex><span>    └── shared-content/
-</span></span><span style=display:flex><span>        └── films/
-</span></span><span style=display:flex><span>            ├── _index.md
-</span></span><span style=display:flex><span>            ├── film-1.md
-</span></span><span style=display:flex><span>            └── film-2.md</span></span></code></pre></div></div><h2 id=risorse-esterne>Risorse esterne</h2><ul><li><a href=https://cloudcannon.com/tutorials/hugo-beginner-tutorial/ target=_blank rel="noopener noreferrer">Corso Hugo di Cloudcannon</a>
-;</li><li><a href=https://www.giraffeacademy.com/static-site-generators/hugo/ target=_blank rel="noopener noreferrer">Corso Hugo di Giraffe Academy</a></li></ul></div><div class=article-footer><div class=tag-list><a class=tag href=/tags/hugo/>hugo</a></div></div><nav class=article-pagination><a class=prev href=/posts/logseq/><span class=pagination-arrow>&larr;</span><span class=pagination-title>Logseq: verso l'ordine mentale</span></a></nav></article></main></div><div id=search-modal class=search-modal hidden><div class=search-backdrop id=search-backdrop></div><div class=search-panel role=dialog aria-modal=true aria-label=Search><div class=search-input-row><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-<input id=search-input type=text placeholder="Search posts and projects&mldr;" autocomplete=off data-index-url=/index.json data-recent-posts=3 data-recent-projects=3>
-<button type=button id=search-close aria-label="Close search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div id=search-results class=search-results></div></div></div><script defer src=/js/main.a7cec30a666d257e828f8d741863e1fc050447776f13017ebba5806f8c926153.js integrity="sha256-p87DCmZtJX6Cj410GGPh/AUER3dvEwF+u6WAb4ySYVM="></script></body></html>
+      <button type="button" id="theme-toggle" aria-label="Toggle color theme">
+        <span class="icon-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+</span>
+        <span class="icon-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+</span>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+    </div>
+    <div class="sidebar-footer">&copy; 2026 log.lrossi.xyz</div>
+  </div>
+</aside>
+
+    <main class="content">
+      
+  <article class="article">
+    <header class="article-header" id="top">
+      <h1 style="view-transition-name: vt-title-803cbc029d7094303fe8102b4adb06a0">Hugo: primi passi</h1>
+      <div class="article-meta">
+  <time datetime="2026-09-28">28 September 2026</time>
+  
+  <span class="meta-sep">&middot;</span>
+  <span>5 min read</span>
+  
+</div>
+
+    </header>
+
+    
+    
+<button type="button" id="toc-toggle" class="toc-toggle" aria-label="Table of contents" aria-expanded="false" aria-controls="toc">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+
+</button>
+<nav class="toc" id="toc">
+  <span class="toc-indicator" aria-hidden="true"></span>
+  
+  <a href="#introduzione" class="toc-link">Introduzione</a>
+  
+  <a href="#primi-passi" class="toc-link">Primi passi</a>
+  
+  <a href="#pubblicazione" class="toc-link">Pubblicazione</a>
+  
+  <a href="#deploy" class="toc-link">Deploy</a>
+  
+  <a href="#utilizzo-base" class="toc-link">Utilizzo base</a>
+  
+  <a href="#struttura-a-directory" class="toc-link">Struttura a directory</a>
+  
+  <a href="#temi" class="toc-link">Temi</a>
+  
+  <a href="#risorse-esterne" class="toc-link">Risorse esterne</a>
+  
+</nav>
+    
+
+    <div class="prose">
+      <h2 id="introduzione">Introduzione</h2>
+<p>Questo è il primo di una serie di articoli sul mio viaggio nella tecnologia. In questo, parlerò di <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a>
+, di come ho conosciuto il framework e di come lo potrei utilizzare per progetti personali.</p>
+<p>L&rsquo;obiettivo di questo esperimento è puramente didattico, pertanto cercherò il più possibile di non utilizzare tool AI di alcun genere, per quanto i loro prodotti siano sempre più impeccabili e, oggettivamente, facciano risparmiare ore per lavori ripetitivi.</p>
+<p>Il tono con cui cercherò di parlare sarà a metà strada tra il pub e la formalità, ma tratterò questo progetto come una guida scritta da me stesso e rivolta a me stesso. Spero, comunque, che possa essere utile a qualcuno.</p>
+<h2 id="primi-passi">Primi passi</h2>
+<p>Per prima cosa, ho seguito la guida <a href="https://gohugo.io/getting-started/quick-start/" target="_blank" rel="noopener noreferrer">quickstart</a>
+ di Hugo, che mi ha permesso di avviare l&rsquo;infrastruttura e di creare questo primo post. Al momento sto gestendo il progetto da due finestre di terminale: una con cui ho avviato il server Hugo e l&rsquo;altra con cui organizzo i contenuti.</p>
+<p>Trovo molto comodo lanciare il server con il comando</p>
+<p><code>hugo server --buildDrafts</code></p>
+<p>grazie a cui la renderizzazione della pagina web corrispondente all&rsquo;articolo che sto scrivendo è praticamente istantanea.</p>
+<h3 id="configurazione">Configurazione</h3>
+<p>Ho installato il tema <a href="https://github.com/omegion/hugo-omegion" target="_blank" rel="noopener noreferrer">Omegion</a>
+, scelto tra i vari temi disponibili per Hugo. Magari, quando avrò una maggiore comprensione di tutte le parti in gioco in un sito Hugo, riuscirò a creare il mio tema, potenzialmente in accordo con lo stesso tema grafico del mio sito.</p>
+<p>Dopodiché, ho modificato la configurazione generale del progetto Hugo, impostando baseURL, locale, titolo e tema.</p>
+<h2 id="pubblicazione">Pubblicazione</h2>
+<p>La documentazione ci tiene a marcare la differenza tra <em>pubblicazione</em> e <em>deploy</em>. La pubblicazione, che avviene semplicemente col comando <code>hugo</code> nella working directory, permette il rendering di tutti i file realizzati per comporre il materiale web finale (HTML, CSS, asset vari, JS). I file renderizzati verranno collocati nella directory <strong>public</strong> e verranno sovrascritti ad ogni nuova pubblicazione.</p>
+<p>Dato che mi interessa che la cartella <strong>public</strong> venga ripulita ad ogni pubblicazione, ho modificato la configurazione della build di progetto con il codice seguente, aggiunto in coda al file <em>hugo.toml</em> (come indicato nella sezione di <a href="https://gohugo.io/configuration/build/#clean-destination-directory" target="_blank" rel="noopener noreferrer">build</a>
+ di Hugo):</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">toml</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">build</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">build</span>.<span style="color:#a6e22e">cleanDestinationDir</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">keepDirs</span> = [<span style="color:#e6db74">&#39;{**/,}.*&#39;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">keepFiles</span> = [<span style="color:#e6db74">&#39;{**/,}.{git,gitignore,gitattributes}&#39;</span>]</span></span></code></pre></div>
+</div>
+<p>Dopo aver pubblicato il sito con il comando <code>hugo</code>, la struttura della directory <code>public/</code> dovrebbe essere all&rsquo;incirca la seguente:</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">text</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>public/
+</span></span><span style="display:flex;"><span>├── categories/
+</span></span><span style="display:flex;"><span>│   ├── index.html
+</span></span><span style="display:flex;"><span>│   └── index.xml  &lt;-- Feed RSS di questa sezione
+</span></span><span style="display:flex;"><span>├── posts/
+</span></span><span style="display:flex;"><span>│   ├── my-first-post/
+</span></span><span style="display:flex;"><span>│   │   └── index.html
+</span></span><span style="display:flex;"><span>│   ├── index.html
+</span></span><span style="display:flex;"><span>│   └── index.xml  &lt;-- Feed RSS di questa sezione
+</span></span><span style="display:flex;"><span>├── tags/
+</span></span><span style="display:flex;"><span>│   ├── index.html
+</span></span><span style="display:flex;"><span>│   └── index.xml  &lt;-- Feed RSS di questa sezione
+</span></span><span style="display:flex;"><span>├── index.html
+</span></span><span style="display:flex;"><span>├── index.xml      &lt;-- Feed RSS di questa sezione
+</span></span><span style="display:flex;"><span>└── sitemap.xml</span></span></code></pre></div>
+</div>
+<p>È molto interessante il fatto che venga renderizzata anche la <code>sitemap.xml</code>, è un aiuto in più per chi ha bisogno, ad esempio, di gestire la SEO.</p>
+<h2 id="deploy">Deploy</h2>
+<p>Uno dei passi successivi che vengono toccati è il deploy. Ci sono diversi modi di effettuare il deploy di un sito Hugo ma, a me, interessa il <a href="https://gohugo.io/host-and-deploy/host-on-github-pages/" target="_blank" rel="noopener noreferrer">deploy con GitHub Pages</a>
+.</p>
+<p>Considererò questa guida più avanti, quando avrò una maggiore comprensione dell&rsquo;infrastruttura.</p>
+<h2 id="utilizzo-base">Utilizzo base</h2>
+<p>Per questa sezione, ho proseguito nella documentazione con la pagina <a href="https://gohugo.io/getting-started/usage/" target="_blank" rel="noopener noreferrer">Basic usage</a>
+.</p>
+<p>La prima parte è un piccolo compendio su comandi base come <code>hugo version</code>, <code>hugo help</code>, <code>hugo server --help</code> e <code>hugo build</code>, tutti da lanciare nella working directory.</p>
+<p>Poco oltre, c&rsquo;è una parte più interessante sulle <em>bozze</em>: in particolare, servendoci di appositi flag per ciascun articolo, è possibile considerarlo o meno per la pubblicazione del progetto.</p>
+<p>Ogni articolo, quindi ogni &ldquo;foglia&rdquo; del ramo di filesystem che parte dalla working directory, è un file markdown (<code>.md</code>) che può avere quattro variabili: <code>draft</code>, <code>date</code>, <code>publishDate</code> e <code>expiryDate</code>.</p>
+<h2 id="struttura-a-directory">Struttura a directory</h2>
+<p>Ogni progetto Hugo è composto da directory in cui ci sono subdirectory che concorrono a contenuto, struttura, comportamento e presentazione.</p>
+<p>Il comando</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">text</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <pre tabindex="0"><code>hugo new project log.lrossi.xyz</code></pre>
+</div>
+<p>crea una struttura come la seguente:</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">text</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>my-project/
+</span></span><span style="display:flex;"><span>├── archetypes/
+</span></span><span style="display:flex;"><span>│   └── default.md
+</span></span><span style="display:flex;"><span>├── assets/
+</span></span><span style="display:flex;"><span>├── content/
+</span></span><span style="display:flex;"><span>├── data/
+</span></span><span style="display:flex;"><span>├── i18n/
+</span></span><span style="display:flex;"><span>├── layouts/
+</span></span><span style="display:flex;"><span>├── static/
+</span></span><span style="display:flex;"><span>├── themes/
+</span></span><span style="display:flex;"><span>└── hugo.toml         &lt;-- configurazione</span></span></code></pre></div>
+</div>
+<p>A seconda delle esigenze, questa struttura può essere personalizzata ma, a me, per il momento, va bene la struttura standard.</p>
+<h3 id="directories">Directories</h3>
+<p>Di seguito un breve riassunto dello scopo delle varie directory.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Directory</th>
+					<th>Contenuto</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>archetypes</strong></td>
+					<td>Template dei potenziali futuri contenuti.</td>
+			</tr>
+			<tr>
+					<td><strong>assets</strong></td>
+					<td>Immagini, CSS, Sass, JS e TS.</td>
+			</tr>
+			<tr>
+					<td><strong>config</strong></td>
+					<td>Configurazione di progetto ed eventuali subdirectory e file. Per progetti con configurazione minima, basta il file <code>hugo.toml</code>.</td>
+			</tr>
+			<tr>
+					<td><strong>content</strong></td>
+					<td>File <code>.md</code> delle pagine del progetto.</td>
+			</tr>
+			<tr>
+					<td><strong>data</strong></td>
+					<td>Configurazioni per contenuto, localizzazione e navigazione.</td>
+			</tr>
+			<tr>
+					<td><strong>i18n</strong></td>
+					<td>Tabelle di traduzione.</td>
+			</tr>
+			<tr>
+					<td><strong>layouts</strong></td>
+					<td>Modelli per utilizzare i contenuti per renderizzare il sito finale.</td>
+			</tr>
+			<tr>
+					<td><strong>public</strong></td>
+					<td>Sito web pubblicato, generato con comando <code>hugo build</code> o <code>hugo server</code>.</td>
+			</tr>
+			<tr>
+					<td><strong>resources</strong></td>
+					<td>Cache per i contenuti multimediali renderizzati con <code>hugo build</code>, principalmente CSS e immagini.</td>
+			</tr>
+			<tr>
+					<td><strong>static</strong></td>
+					<td>File che vengono copiati in <strong>public</strong> alla build (icone, immagini, CSS e JS).</td>
+			</tr>
+			<tr>
+					<td><strong>themes</strong></td>
+					<td>Uno o più temi, ciascuno nella sua subdirectory.</td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="temi">Temi</h2>
+<p>Il tema che ho inizialmente scelto per questo progetto è <a href="https://github.com/omegion/hugo-omegion" target="_blank" rel="noopener noreferrer">Omegion</a>
+, perchè ha un&rsquo;interfaccia minimal e molto rilassante, specialmente con il tema dark. Con l&rsquo;obiettivo di raccogliere post in varie categorie (cosa che, devo ancora capire come farsi), mi sembrava la scelta migliore.</p>
+<p>Ad ogni modo, si può creare un nuovo tema da zero con il comando</p>
+<p><code>hugo new theme theme-name</code></p>
+<p>che risulta nella creazione del seguente ramo di file system:</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">text</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>my-theme/
+</span></span><span style="display:flex;"><span>├── archetypes/
+</span></span><span style="display:flex;"><span>├── assets/
+</span></span><span style="display:flex;"><span>├── content/
+</span></span><span style="display:flex;"><span>├── data/
+</span></span><span style="display:flex;"><span>├── i18n/
+</span></span><span style="display:flex;"><span>├── layouts/
+</span></span><span style="display:flex;"><span>├── static/
+</span></span><span style="display:flex;"><span>└── hugo.toml</span></span></code></pre></div>
+</div>
+<p>Esiste la possibilità di gestire un file system unificato per due progetti Hugo, o per un progetto che sfrutti elementi di due temi diversi. Questo è possibile grazie a una configurazione da aggiungere in coda al file <code>hugo.toml</code>:</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">toml</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">module</span>]
+</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">mounts</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span> = <span style="color:#e6db74">&#39;content&#39;</span> <span style="color:#75715e"># riferito alla working directory</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">target</span> = <span style="color:#e6db74">&#39;content&#39;</span>
+</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">mounts</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span> = <span style="color:#e6db74">&#39;/path/to/other/content&#39;</span> <span style="color:#75715e"># riferito ad altra directory</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">target</span> = <span style="color:#e6db74">&#39;content&#39;</span></span></span></code></pre></div>
+</div>
+<p>In questo modo, è possibile gestire progetti con file system più articolato, come ad esempio il seguente:</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">text</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>home/
+</span></span><span style="display:flex;"><span>└── user/
+</span></span><span style="display:flex;"><span>    ├── my-project/
+</span></span><span style="display:flex;"><span>    │   ├── content/
+</span></span><span style="display:flex;"><span>    │   │   ├── books/
+</span></span><span style="display:flex;"><span>    │   │   │   ├── _index.md
+</span></span><span style="display:flex;"><span>    │   │   │   ├── book-1.md
+</span></span><span style="display:flex;"><span>    │   │   │   └── book-2.md
+</span></span><span style="display:flex;"><span>    │   │   └── _index.md
+</span></span><span style="display:flex;"><span>    │   ├── themes/
+</span></span><span style="display:flex;"><span>    │   │   └── my-theme/
+</span></span><span style="display:flex;"><span>    │   └── hugo.toml
+</span></span><span style="display:flex;"><span>    └── shared-content/
+</span></span><span style="display:flex;"><span>        └── films/
+</span></span><span style="display:flex;"><span>            ├── _index.md
+</span></span><span style="display:flex;"><span>            ├── film-1.md
+</span></span><span style="display:flex;"><span>            └── film-2.md</span></span></code></pre></div>
+</div>
+<h2 id="risorse-esterne">Risorse esterne</h2>
+<ul>
+<li><a href="https://cloudcannon.com/tutorials/hugo-beginner-tutorial/" target="_blank" rel="noopener noreferrer">Corso Hugo di Cloudcannon</a>
+;</li>
+<li><a href="https://www.giraffeacademy.com/static-site-generators/hugo/" target="_blank" rel="noopener noreferrer">Corso Hugo di Giraffe Academy</a>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    <div class="article-footer">
+      
+      <div class="tag-list">
+        
+        <a class="tag" href="/tags/hugo/">hugo</a>
+        
+      </div>
+      
+      
+
+    </div>
+    
+
+    
+    
+    
+    
+    <nav class="article-pagination">
+      <a class="prev" href="/posts/logseq/"><span class="pagination-arrow">&larr;</span><span class="pagination-title">Logseq: verso l'ordine mentale</span></a>
+      <a class="next" href="/posts/ai-and-education/"><span class="pagination-title">AI and Education: un report dell'MIT</span><span class="pagination-arrow">&rarr;</span></a>
+    </nav>
+    
+    
+  </article>
+
+    </main>
+  </div>
+  <div id="search-modal" class="search-modal" hidden>
+  <div class="search-backdrop" id="search-backdrop"></div>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="search-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+
+      <input id="search-input" type="text" placeholder="Search posts and projects&hellip;" autocomplete="off"
+        data-index-url="/index.json"
+        data-recent-posts="3"
+        data-recent-projects="3" />
+      <button type="button" id="search-close" aria-label="Close search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+</button>
+    </div>
+    <div id="search-results" class="search-results"></div>
+  </div>
+</div>
+
+  <script defer src="/js/main.e3f1b8f4666aaa206be7beeacede08363699f6a891eec438ca8e49032e65d9fa.js" integrity="sha256-4/G49GZqqiBr577qzt4INjaZ9qiR7sQ4yo5JAy5l2fo="></script>
+</body>
+</html>
