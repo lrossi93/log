@@ -122,7 +122,7 @@
   <time datetime="2026-10-04">4 October 2026</time>
   
   <span class="meta-sep">&middot;</span>
-  <span>1 min read</span>
+  <span>2 min read</span>
   
 </div>
 
@@ -158,6 +158,29 @@
 <h2 id="la-pipeline">La pipeline</h2>
 <p>La sequenza di azioni che voglio compiere, per minimizzare i miei oneri, è la seguente: scrittura di contenuti, push su repository GitHub del sorgente aggiornato, compilazione dei sorgenti e creazione del sito statico tramite script GitHub Actions, pubblicazione del sito statico tramite GitHub Pages.</p>
 <h3 id="creazione-della-repository-su-github">Creazione della repository su GitHub</h3>
+<p>Nella working directory, nel mio caso specifico <code>log/</code>, si può inizializzare la repository locale con il comando <code>git init</code>. Tutti i sorgenti realizzati vanno aggiunti al pacchetto da sincronizzare con i comandi <code>git add .</code> e <code>git commit -m &quot;Initial commit&quot;</code>.</p>
+<p>Dopodiché va creata la repository remota sul profilo personale GitHub. Per permettere la pubblicazione con GitHub Pages, la repository deve necessariamente essere pubblica e, in fase di creazione, può essere vuota. Una volta creata, è possibile sincronizzare la repository remota con quella locale inizializzata al passaggio precedente con i seguenti comandi da terminale:</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">text</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git remote add origin git@github.com:&lt;username&gt;/&lt;repository-name&gt;.git
+</span></span><span style="display:flex;"><span>git branch -M main
+</span></span><span style="display:flex;"><span>git push -u origin main</span></span></code></pre></div>
+</div>
+<p>GitHub, in questo, ci guida passo passo. Se tutto è andato liscio, a questo punto la repository locale e quella remota su GitHub dovrebbero avere gli stessi identici contenuti.</p>
+<h3 id="pubblicazione-su-github-pages">Pubblicazione su GitHub Pages</h3>
+<p>Una volta che il sito è integralmente su repository remota, si può esporre su un dominio come <code>&lt;username&gt;.github.io/&lt;repository&gt;</code>. Seguendo le istruzioni presenti nella <a href="https://docs.github.com/en/pages/getting-started-with-github-pages" target="_blank" rel="noopener noreferrer">documentazione di GitHub Pages</a>
+, il sito non dovrebbe risultare disponibile all&rsquo;URL <code>&lt;username&gt;.github.io/&lt;repository&gt;</code>, perché GitHub Pages cerca un <code>index.html</code> da esporre, il quale però non è presente nella root di progetto. Occorre indicare che il deploy del sito deve essere fatto da una specifica directory, in particolare dalla directory <code>public</code>, che viene creata solo dopo aver compilato i sorgenti locali con il comando <code>hugo</code> da terminale.</p>
+<p>A questo punto, è essenziale creare uno script di compilazione lato GitHub per fare il deploy dalla directory <code>public</code>.</p>
+<h3 id="deploy-automatico-con-github-actions">Deploy automatico con GitHub Actions</h3>
 <h2 id="conclusioni">Conclusioni</h2>
 
     </div>

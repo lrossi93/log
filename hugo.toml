@@ -2,15 +2,7 @@ baseURL = 'https://log.lrossi.xyz/'
 locale = 'it'
 title = 'log.lrossi.xyz'
 theme = 'hugo-omegion'
-author.name = 'Lorenzo Rossi'
-author.bio  = 'ciao'
 
-[build]
-  [build.cleanDestinationDir]
-    enable = false
-    keepDirs = ['{**/,}.*']
-    keepFiles = ['{**/,}.{git,gitignore,gitattributes}']
-    
 defaultContentLanguage = 'it'
 defaultContentLanguageInSubdir = false
 disableDefaultLanguageRedirect = false
@@ -27,7 +19,7 @@ disableLanguages = []
   description = "Breve descrizione del sito"
 
   [params.author]
-    name = "Il tuo nome"
+    name = "Lorenzo Rossi"
     bio = [
       "Musician, programmer, creative time waster.",
       "Raccolgo qui idee, riflessioni e progetti che non interessano a nessuno."

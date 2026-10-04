@@ -1,25 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-	<channel>
-		<title>Hugo on log.lrossi.xyz</title>
-		<link>http://localhost:1313/tags/hugo/</link>
-		<description>Recent content in Hugo on log.lrossi.xyz</description>
-		<generator>Hugo</generator>
-		<language>it</language>
-		
-		
-		
-		
-			<lastBuildDate>Mon, 28 Sep 2026 00:00:00 +0000</lastBuildDate>
-		
-			<atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>Hugo: primi passi</title>
-				<link>http://localhost:1313/posts/primi-passi-con-hugo/</link>
-				<pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/posts/primi-passi-con-hugo/</guid>
-				<description>Un tentativo di replica della guida &lt;em&gt;quickstart&lt;/em&gt; di Hugo.</description>
-				<content:encoded><![CDATA[<h2 id="introduzione">Introduzione</h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Hugo on log.lrossi.xyz</title><link>https://log.lrossi.xyz/tags/hugo/</link><description>Recent content in Hugo on log.lrossi.xyz</description><generator>Hugo</generator><language>it</language><lastBuildDate>Mon, 28 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://log.lrossi.xyz/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo: primi passi</title><link>https://log.lrossi.xyz/posts/primi-passi-con-hugo/</link><pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate><guid>https://log.lrossi.xyz/posts/primi-passi-con-hugo/</guid><description>Un tentativo di replica della guida &lt;em&gt;quickstart&lt;/em&gt; di Hugo.</description><content:encoded><![CDATA[<h2 id="introduzione">Introduzione</h2>
 <p>Questo è il primo di una serie di articoli sul mio viaggio nella tecnologia. In questo, parlerò di <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a>
 , di come ho conosciuto il framework e di come lo potrei utilizzare per progetti personali.</p>
 <p>L&rsquo;obiettivo di questo esperimento è puramente didattico, pertanto cercherò il più possibile di non utilizzare tool AI di alcun genere, per quanto i loro prodotti siano sempre più impeccabili e, oggettivamente, facciano risparmiare ore per lavori ripetitivi.</p>
@@ -275,7 +254,4 @@
 <li><a href="https://www.giraffeacademy.com/static-site-generators/hugo/" target="_blank" rel="noopener noreferrer">Corso Hugo di Giraffe Academy</a>
 </li>
 </ul>
-]]></content:encoded>
-			</item>
-	</channel>
-</rss>
+]]></content:encoded></item></channel></rss>
