@@ -1,0 +1,50 @@
+[{
+    "title": "tus.band",
+    "url": "/projects/tus.band/",
+    "date": "Oct 2026",
+    "summary": "Sito della mia band trad folk.",
+    "section": "projects",
+    "tags": ["test"]
+  },{
+    "title": "Da Hugo locale alla pubblicazione su GitHub Pages",
+    "url": "/posts/hugo-gh-pipeline/",
+    "date": "Oct 2026",
+    "summary": "Sistema per la pubblicazione automatica di articoli su framework Hugo.",
+    "section": "posts",
+    "tags": ["hugo","github"]
+  },{
+    "title": "AI and Education: un report dell'MIT",
+    "url": "/posts/ai-and-education/",
+    "date": "Oct 2026",
+    "summary": "Riflessioni su effetti e ripercussioni dell'AI sull'istruzione.",
+    "section": "posts",
+    "tags": ["ai","education","mit"]
+  },{
+    "title": "Logseq: verso l'ordine mentale",
+    "url": "/posts/logseq/",
+    "date": "Sep 2026",
+    "summary": "Come uso Logseq per organizzare i miei pensieri.",
+    "section": "posts",
+    "tags": ["logseq"]
+  },{
+    "title": "Hugo: primi passi",
+    "url": "/posts/primi-passi-con-hugo/",
+    "date": "Sep 2026",
+    "summary": "Un tentativo di replica della guida *quickstart* di Hugo.",
+    "section": "posts",
+    "tags": ["hugo"]
+  },{
+    "title": "lrossi.xyz",
+    "url": "/projects/lrossi.xyz/",
+    "date": "Jul 2026",
+    "summary": "Sito statico personale per promuovere le mie attività di musicista e consulente informatico.",
+    "section": "projects",
+    "tags": ["cv","angular","website","it","music","piping"]
+  },{
+    "title": "celticknot.it",
+    "url": "/projects/celticknot.it/",
+    "date": "Oct 2024",
+    "summary": "Sito statico per promuovere le mie attività musicali di Celtic Knot Pipes and Drums, la banda di cornamuse e percussioni scozzesi in cui suono.",
+    "section": "projects",
+    "tags": ["cv","angular","website","music","piping"]
+  }]

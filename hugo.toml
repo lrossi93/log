@@ -1,0 +1,58 @@
+baseURL = 'https://log.lrossi.xyz/'
+locale = 'it'
+title = 'log.lrossi.xyz'
+theme = 'hugo-omegion'
+author.name = 'Lorenzo Rossi'
+author.bio  = 'ciao'
+
+[build]
+  [build.cleanDestinationDir]
+    enable = false
+    keepDirs = ['{**/,}.*']
+    keepFiles = ['{**/,}.{git,gitignore,gitattributes}']
+    
+defaultContentLanguage = 'it'
+defaultContentLanguageInSubdir = false
+disableDefaultLanguageRedirect = false
+disableLanguages = []
+
+[languages]
+  [languages.it]
+    label = "italiano"
+    weight = 1
+    title = "log.lrossi.xyz"
+
+[params]
+  enableSearch = true
+  description = "Breve descrizione del sito"
+
+  [params.author]
+    name = "Il tuo nome"
+    bio = [
+      "Musician, programmer, creative time waster.",
+      "Raccolgo qui idee, riflessioni e progetti che non interessano a nessuno."
+    ]
+
+    [[params.author.links]]
+      name = "GitHub"
+      url = "https://github.com/lrossi93"
+      icon = "github"
+
+    [[params.author.links]]
+      name = "LinkedIn"
+      url = "https://www.linkedin.com/in/lrossi1993"
+      icon = "linkedin"
+
+    [[params.author.links]]
+      name = "e-mail"
+      url = "mailto:lrossi93@proton.me"
+      icon = "mail"
+
+[outputs]
+  home = ["html", "rss", "searchindex"]
+
+[outputFormats.searchindex]
+  mediaType = "application/json"
+  baseName = "index"
+  isPlainText = true
+  notAlternative = true

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+	<channel>
+		<title>Tag-Two on log.lrossi.xyz</title>
+		<link>http://localhost:1313/tags/tag-two/</link>
+		<description>Recent content in Tag-Two on log.lrossi.xyz</description>
+		<generator>Hugo</generator>
+		<language>it</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 28 Sep 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/tag-two/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Primi passi con Hugo</title>
+				<link>http://localhost:1313/posts/primi-passi-con-hugo/</link>
+				<pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/primi-passi-con-hugo/</guid>
+				<description>Un tentativo di replica della guida &lt;em&gt;quickstart&lt;/em&gt; di Hugo.</description>
+				<content:encoded><![CDATA[<h2 id="introduzione">Introduzione</h2>
+<p>Questo è il primo di una serie di articoli sul mio viaggio nella tecnologia. In questo, parlerò di <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a>
+, di come ho conosciuto il framework e di come lo potrei utilizzare per progetti personali.</p>
+<p>L&rsquo;obiettivo di questo esperimento è puramente didattico, pertanto cercherò il più possibile di non utilizzare tool AI di alcun genere, per quanto i loro prodotti siano sempre più impeccabili e, oggettivamente, facciano risparmiare ore per lavori ripetitivi.</p>
+<p>Il tono con cui cercherò di parlare sarà a metà strada tra il pub e la formalità, ma tratterò questo progetto come una guida scritta da me stesso e rivolta a me stesso. Spero, comunque, che possa essere utile a qualcuno.</p>
+<h2 id="primi-passi">Primi passi</h2>
+<p>Per prima cosa, ho seguito la guida <a href="https://gohugo.io/getting-started/quick-start/" target="_blank" rel="noopener noreferrer">quickstart</a>
+ di Hugo, che mi ha permesso di avviare l&rsquo;infrastruttura e di creare questo primo post. Al momento sto gestendo il progetto da due finestre di terminale: una con cui ho avviato il server Hugo e l&rsquo;altra con cui organizzo i contenuti.</p>
+<p>Trovo molto comodo lanciare il server con il comando</p>
+<p><code>hugo server --buildDrafts</code></p>
+<p>grazie a cui la renderizzazione della pagina web corrispondente all&rsquo;articolo che sto scrivendo è praticamente istantanea.</p>
+<h3 id="configurazione">Configurazione</h3>
+<p>Ho installato il tema <a href="https://github.com/omegion/hugo-omegion" target="_blank" rel="noopener noreferrer">Omegion</a>
+, scelto tra i vari temi disponibili per Hugo. Magari, quando avrò una maggiore comprensione di tutte le parti in gioco in un sito Hugo, riuscirò a creare il mio tema, potenzialmente in accordo con lo stesso tema grafico del mio sito.</p>
+<p>Dopodiché, ho modificato la configurazione generale del progetto Hugo, impostando baseURL, locale, titolo e tema.</p>
+<h2 id="pubblicazione">Pubblicazione</h2>
+<p>La documentazione ci tiene a marcare la differenza tra <em>pubblicazione</em> e <em>deploy</em>. La pubblicazione, che avviene semplicemente col comando <code>hugo</code> nella working directory, permette il rendering di tutti i file realizzati per comporre il materiale web finale (HTML, CSS, asset vari, JS). I file renderizzati verranno collocati nella directory <strong>public</strong> e verranno sovrascritti ad ogni nuova pubblicazione.</p>
+<p>Dato che mi interessa che la cartella <strong>public</strong> venga ripulita ad ogni pubblicazione, ho modificato la configurazione della build di progetto con il codice seguente, aggiunto in coda al file <em>hugo.toml</em> (come indicato nella sezione di <a href="https://gohugo.io/configuration/build/#clean-destination-directory" target="_blank" rel="noopener noreferrer">build</a>
+ di Hugo):</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">toml</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">build</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">build</span>.<span style="color:#a6e22e">cleanDestinationDir</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">keepDirs</span> = [<span style="color:#e6db74">&#39;{**/,}.*&#39;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">keepFiles</span> = [<span style="color:#e6db74">&#39;{**/,}.{git,gitignore,gitattributes}&#39;</span>]</span></span></code></pre></div>
+</div>
+<p>Dopo aver pubblicato il sito con il comando <code>hugo</code>, la struttura della directory <code>public/</code> dovrebbe essere all&rsquo;incirca la seguente:</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">text</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>public/
+</span></span><span style="display:flex;"><span>├── categories/
+</span></span><span style="display:flex;"><span>│   ├── index.html
+</span></span><span style="display:flex;"><span>│   └── index.xml  &lt;-- Feed RSS di questa sezione
+</span></span><span style="display:flex;"><span>├── posts/
+</span></span><span style="display:flex;"><span>│   ├── my-first-post/
+</span></span><span style="display:flex;"><span>│   │   └── index.html
+</span></span><span style="display:flex;"><span>│   ├── index.html
+</span></span><span style="display:flex;"><span>│   └── index.xml  &lt;-- Feed RSS di questa sezione
+</span></span><span style="display:flex;"><span>├── tags/
+</span></span><span style="display:flex;"><span>│   ├── index.html
+</span></span><span style="display:flex;"><span>│   └── index.xml  &lt;-- Feed RSS di questa sezione
+</span></span><span style="display:flex;"><span>├── index.html
+</span></span><span style="display:flex;"><span>├── index.xml      &lt;-- Feed RSS di questa sezione
+</span></span><span style="display:flex;"><span>└── sitemap.xml</span></span></code></pre></div>
+</div>
+<p>È molto interessante il fatto che venga renderizzata anche la <code>sitemap.xml</code>, è un aiuto in più per chi ha bisogno, ad esempio, di gestire la SEO.</p>
+<h2 id="deploy">Deploy</h2>
+<p>Uno dei passi successivi che vengono toccati è il deploy. Ci sono diversi modi di effettuare il deploy di un sito Hugo ma, a me, interessa il <a href="https://gohugo.io/host-and-deploy/host-on-github-pages/" target="_blank" rel="noopener noreferrer">deploy con GitHub Pages</a>
+.</p>
+<p>Considererò questa guida più avanti, quando avrò una maggiore comprensione dell&rsquo;infrastruttura.</p>
+<h2 id="utilizzo-base">Utilizzo base</h2>
+<p>Per questa sezione, ho proseguito nella documentazione con la pagina <a href="https://gohugo.io/getting-started/usage/" target="_blank" rel="noopener noreferrer">Basic usage</a>
+.</p>
+<p>La prima parte è un piccolo compendio su comandi base come <code>hugo version</code>, <code>hugo help</code>, <code>hugo server --help</code> e <code>hugo build</code>, tutti da lanciare nella working directory.</p>
+<p>Poco oltre, c&rsquo;è una parte più interessante sulle <em>bozze</em>: in particolare, servendoci di appositi flag per ciascun articolo, è possibile considerarlo o meno per la pubblicazione del progetto.</p>
+<p>Ogni articolo, quindi ogni &ldquo;foglia&rdquo; del ramo di filesystem che parte dalla working directory, è un file markdown (<code>.md</code>) che può avere quattro variabili: <code>draft</code>, <code>date</code>, <code>publishDate</code> e <code>expiryDate</code>.</p>
+<h2 id="struttura-a-directory">Struttura a directory</h2>
+<p>Ogni progetto Hugo è composto da directory in cui ci sono subdirectory che concorrono a contenuto, struttura, comportamento e presentazione.</p>
+<p>Il comando</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">text</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <pre tabindex="0"><code>hugo new project log.lrossi.xyz</code></pre>
+</div>
+<p>crea una struttura come la seguente:</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">text</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>my-project/
+</span></span><span style="display:flex;"><span>├── archetypes/
+</span></span><span style="display:flex;"><span>│   └── default.md
+</span></span><span style="display:flex;"><span>├── assets/
+</span></span><span style="display:flex;"><span>├── content/
+</span></span><span style="display:flex;"><span>├── data/
+</span></span><span style="display:flex;"><span>├── i18n/
+</span></span><span style="display:flex;"><span>├── layouts/
+</span></span><span style="display:flex;"><span>├── static/
+</span></span><span style="display:flex;"><span>├── themes/
+</span></span><span style="display:flex;"><span>└── hugo.toml         &lt;-- configurazione</span></span></code></pre></div>
+</div>
+<p>A seconda delle esigenze, questa struttura può essere personalizzata ma, a me, per il momento, va bene la struttura standard.</p>
+<h3 id="directories">Directories</h3>
+<p>Di seguito un breve riassunto dello scopo delle varie directory.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Directory</th>
+					<th>Contenuto</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>archetypes</strong></td>
+					<td>Template dei potenziali futuri contenuti.</td>
+			</tr>
+			<tr>
+					<td><strong>assets</strong></td>
+					<td>Immagini, CSS, Sass, JS e TS.</td>
+			</tr>
+			<tr>
+					<td><strong>config</strong></td>
+					<td>Configurazione di progetto ed eventuali subdirectory e file. Per progetti con configurazione minima, basta il file <code>hugo.toml</code>.</td>
+			</tr>
+			<tr>
+					<td><strong>content</strong></td>
+					<td>File <code>.md</code> delle pagine del progetto.</td>
+			</tr>
+			<tr>
+					<td><strong>data</strong></td>
+					<td>Configurazioni per contenuto, localizzazione e navigazione.</td>
+			</tr>
+			<tr>
+					<td><strong>i18n</strong></td>
+					<td>Tabelle di traduzione.</td>
+			</tr>
+			<tr>
+					<td><strong>layouts</strong></td>
+					<td>Modelli per utilizzare i contenuti per renderizzare il sito finale.</td>
+			</tr>
+			<tr>
+					<td><strong>public</strong></td>
+					<td>Sito web pubblicato, generato con comando <code>hugo build</code> o <code>hugo server</code>.</td>
+			</tr>
+			<tr>
+					<td><strong>resources</strong></td>
+					<td>Cache per i contenuti multimediali renderizzati con <code>hugo build</code>, principalmente CSS e immagini.</td>
+			</tr>
+			<tr>
+					<td><strong>static</strong></td>
+					<td>File che vengono copiati in <strong>public</strong> alla build (icone, immagini, CSS e JS).</td>
+			</tr>
+			<tr>
+					<td><strong>themes</strong></td>
+					<td>Uno o più temi, ciascuno nella sua subdirectory.</td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="temi">Temi</h2>
+<p>Il tema che ho inizialmente scelto per questo progetto è <a href="https://github.com/omegion/hugo-omegion" target="_blank" rel="noopener noreferrer">Omegion</a>
+, perchè ha un&rsquo;interfaccia minimal e molto rilassante, specialmente con il tema dark. Con l&rsquo;obiettivo di raccogliere post in varie categorie (cosa che, devo ancora capire come farsi), mi sembrava la scelta migliore.</p>
+<p>Ad ogni modo, si può creare un nuovo tema da zero con il comando</p>
+<p><code>hugo new theme theme-name</code></p>
+<p>che risulta nella creazione del seguente ramo di file system:</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">text</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>my-theme/
+</span></span><span style="display:flex;"><span>├── archetypes/
+</span></span><span style="display:flex;"><span>├── assets/
+</span></span><span style="display:flex;"><span>├── content/
+</span></span><span style="display:flex;"><span>├── data/
+</span></span><span style="display:flex;"><span>├── i18n/
+</span></span><span style="display:flex;"><span>├── layouts/
+</span></span><span style="display:flex;"><span>├── static/
+</span></span><span style="display:flex;"><span>└── hugo.toml</span></span></code></pre></div>
+</div>
+<p>Esiste la possibilità di gestire un file system unificato per due progetti Hugo, o per un progetto che sfrutti elementi di due temi diversi. Questo è possibile grazie a una configurazione da aggiungere in coda al file <code>hugo.toml</code>:</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">toml</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">module</span>]
+</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">mounts</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span> = <span style="color:#e6db74">&#39;content&#39;</span> <span style="color:#75715e"># riferito alla working directory</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">target</span> = <span style="color:#e6db74">&#39;content&#39;</span>
+</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">mounts</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span> = <span style="color:#e6db74">&#39;/path/to/other/content&#39;</span> <span style="color:#75715e"># riferito ad altra directory</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">target</span> = <span style="color:#e6db74">&#39;content&#39;</span></span></span></code></pre></div>
+</div>
+<p>In questo modo, è possibile gestire progetti con file system più articolato, come ad esempio il seguente:</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">text</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>home/
+</span></span><span style="display:flex;"><span>└── user/
+</span></span><span style="display:flex;"><span>    ├── my-project/
+</span></span><span style="display:flex;"><span>    │   ├── content/
+</span></span><span style="display:flex;"><span>    │   │   ├── books/
+</span></span><span style="display:flex;"><span>    │   │   │   ├── _index.md
+</span></span><span style="display:flex;"><span>    │   │   │   ├── book-1.md
+</span></span><span style="display:flex;"><span>    │   │   │   └── book-2.md
+</span></span><span style="display:flex;"><span>    │   │   └── _index.md
+</span></span><span style="display:flex;"><span>    │   ├── themes/
+</span></span><span style="display:flex;"><span>    │   │   └── my-theme/
+</span></span><span style="display:flex;"><span>    │   └── hugo.toml
+</span></span><span style="display:flex;"><span>    └── shared-content/
+</span></span><span style="display:flex;"><span>        └── films/
+</span></span><span style="display:flex;"><span>            ├── _index.md
+</span></span><span style="display:flex;"><span>            ├── film-1.md
+</span></span><span style="display:flex;"><span>            └── film-2.md</span></span></code></pre></div>
+</div>
+<h2 id="risorse-esterne">Risorse esterne</h2>
+<ul>
+<li><a href="https://cloudcannon.com/tutorials/hugo-beginner-tutorial/" target="_blank" rel="noopener noreferrer">Corso Hugo di Cloudcannon</a>
+;</li>
+<li><a href="https://www.giraffeacademy.com/static-site-generators/hugo/" target="_blank" rel="noopener noreferrer">Corso Hugo di Giraffe Academy</a>
+</li>
+</ul>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

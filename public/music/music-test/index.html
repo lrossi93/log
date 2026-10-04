@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="it"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Test · Il mio sito</title>
+  <meta name="title" content="Music Test · Il mio sito" />
+  <meta name="description" content="Used for &lt;meta description&gt; / OpenGraph if summary is empty." />
+  <link rel="canonical" href="http://localhost:1313/music/music-test/" />
+
+  <meta property="og:site_name" content="Il mio sito" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://localhost:1313/music/music-test/" />
+  <meta property="og:title" content="Music Test · Il mio sito" />
+  <meta property="og:description" content="Used for &lt;meta description&gt; / OpenGraph if summary is empty." />
+  <meta property="og:image" content="http://localhost:1313/favicon/android-chrome-512x512.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Music Test · Il mio sito" />
+  <meta name="twitter:description" content="Used for &lt;meta description&gt; / OpenGraph if summary is empty." />
+  <meta name="twitter:image" content="http://localhost:1313/favicon/android-chrome-512x512.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.min.7916bc087f5c7718c9d8cb1d2e989d7c1091596b84aa2c50a06e06190ea015fd.css" integrity="sha256-eRa8CH9cdxjJ2MsdLpidfBCRWWuEqixQoG4GGQ6gFf0=" />
+
+  <script>
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem("theme"); } catch (e) {}
+      var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+
+
+
+</head>
+
+<body>
+  <div class="shell">
+    <header class="mobile-header">
+  <a class="mobile-header-title logo-letters" href="/"><span style="--i:0">I</span><span style="--i:1">l</span><span style="--i:2"> </span><span style="--i:3">m</span><span style="--i:4">i</span><span style="--i:5">o</span><span style="--i:6"> </span><span style="--i:7">s</span><span style="--i:8">i</span><span style="--i:9">t</span><span style="--i:10">o</span></a>
+  <button type="button" id="sidebar-toggle" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+
+  </button>
+</header>
+
+<div id="sidebar-backdrop" class="sidebar-backdrop" hidden></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <h1 class="site-title"><a href="/" class="logo-letters"><span style="--i:0">I</span><span style="--i:1">l</span><span style="--i:2"> </span><span style="--i:3">m</span><span style="--i:4">i</span><span style="--i:5">o</span><span style="--i:6"> </span><span style="--i:7">s</span><span style="--i:8">i</span><span style="--i:9">t</span><span style="--i:10">o</span></a></h1>
+
+    <div class="sidebar-links">
+      <a href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+<span>Home</span></a>
+      <a href="/index.xml"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg>
+<span>RSS</span></a>
+    </div>
+  </div>
+
+  <div class="sidebar-bottom">
+    <div class="sidebar-links">
+      <a href="/tags/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L13.42 20.58a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+<span>Tags</span></a>
+      <button type="button" id="theme-toggle" aria-label="Toggle color theme">
+        <span class="icon-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+</span>
+        <span class="icon-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+</span>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+    </div>
+    <div class="sidebar-footer">&copy; 2026 Il mio sito</div>
+  </div>
+</aside>
+
+    <main class="content">
+      
+  <article class="article">
+    <header class="article-header" id="top">
+      <h1 style="view-transition-name: vt-title-0237ad586f569ffff42c96eca2c2a13f">Music Test</h1>
+      <div class="article-meta">
+  <time datetime="2026-09-28">28 September 2026</time>
+  
+</div>
+
+    </header>
+
+    
+    
+<button type="button" id="toc-toggle" class="toc-toggle" aria-label="Table of contents" aria-expanded="false" aria-controls="toc">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+
+</button>
+<nav class="toc" id="toc">
+  <span class="toc-indicator" aria-hidden="true"></span>
+  
+  <a href="#perch%c3%a9-logseq" class="toc-link">Perché logseq?</a>
+  
+  <a href="#funziona" class="toc-link">Funziona?</a>
+  
+</nav>
+    
+
+    <div class="prose">
+      <h2 id="perché-logseq">Perché logseq?</h2>
+<p>Ho molti pensieri, sempre. Questo ogni tanto mi porta sia a vivermi meno il momento presente, sia a perdermi delle idee che potrebbero essere sviluppate e diventare progetti interessanti. Ho pensato a quale strumento potesse aiutarmi a visualizzare i collegamenti tra i vari ambiti che mi riguardano, in modo da trovare più rapidamente le connessioni tra le mie varie attività. La mia deformazione etico/professionale mi spinge a evitare software proprietario o che usi i dati personali come valuta.</p>
+<p>Informandomi, ho pensato a <a href="https://obsidian.md/" target="_blank" rel="noopener noreferrer">Obsidian</a>
+ e a <a href="https://www.notion.com/" target="_blank" rel="noopener noreferrer">Notion</a>
+: entrambi fanno più o meno quello che mi serve e sono piuttosto interessanti, però hanno entrambi la barriera dell&rsquo;account. Certo, avere un account significa che da qualche parte su Internet c&rsquo;è un <em>caveau</em> che contiene i miei progetti e le mie idee, ma significa anche che dovrei cedere alcuni dei miei dati personali all&rsquo;ennesima azienda che potrebbe usarli a mia insaputa per i suoi interessi.  Da qui ho capito che mi occorreva una soluzione locale che potessi eventualmente salvare in remoto.</p>
+<p>Localmente, a meno di ingegneria sociale, non ci sono aziende con cui barattare i miei dati per poter utilizzare un servizio. Ecco che giunge in mio aiuto <a href="https://logseq.com/" target="_blank" rel="noopener noreferrer">Logseq</a>
+, un software che mi permette di prendere appunti, creare istantaneamente una base di conoscenza e interrogarla all&rsquo;evenienza, gestire i miei progetti e il loro andamento e, in sostanza, <strong>delegare</strong> per avere la mente più sgombra.</p>
+<h2 id="funziona">Funziona?</h2>
+<p>Lo uso da circa un mese, quasi quotidianamente, per tenere traccia di riunioni di lavoro, appunti universitari e progetti personali. Ho soltanto raschiato la superficie dell&rsquo;universo di possibilità che questo software offre ma mi ci sto trovando molto bene. In particolare, è piuttosto soddisfacente la <strong>Graph view</strong>, con cui si possono visualizzare tutti i collegamenti tra le varie attività.</p>
+<p><img src="/images/logseq-graph.png" alt="alt text"></p>
+
+    </div>
+
+    
+    
+    <div class="article-footer">
+      
+      <div class="tag-list">
+        
+        <a class="tag" href="/tags/logseq/">logseq</a>
+        
+      </div>
+      
+      
+
+    </div>
+    
+
+    
+  </article>
+
+    </main>
+  </div>
+  <script defer src="/js/main.e3f1b8f4666aaa206be7beeacede08363699f6a891eec438ca8e49032e65d9fa.js" integrity="sha256-4/G49GZqqiBr577qzt4INjaZ9qiR7sQ4yo5JAy5l2fo="></script>
+</body>
+</html>

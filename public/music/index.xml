@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+	<channel>
+		<title>Musics on Il mio sito</title>
+		<link>http://localhost:1313/music/</link>
+		<description>Recent content in Musics on Il mio sito</description>
+		<generator>Hugo</generator>
+		<language>it</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 28 Sep 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/music/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Music Test</title>
+				<link>http://localhost:1313/music/music-test/</link>
+				<pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/music/music-test/</guid>
+				<description>Come uso Logseq per organizzare i miei pensieri.</description>
+				<content:encoded><![CDATA[<h2 id="perché-logseq">Perché logseq?</h2>
+<p>Ho molti pensieri, sempre. Questo ogni tanto mi porta sia a vivermi meno il momento presente, sia a perdermi delle idee che potrebbero essere sviluppate e diventare progetti interessanti. Ho pensato a quale strumento potesse aiutarmi a visualizzare i collegamenti tra i vari ambiti che mi riguardano, in modo da trovare più rapidamente le connessioni tra le mie varie attività. La mia deformazione etico/professionale mi spinge a evitare software proprietario o che usi i dati personali come valuta.</p>
+<p>Informandomi, ho pensato a <a href="https://obsidian.md/" target="_blank" rel="noopener noreferrer">Obsidian</a>
+ e a <a href="https://www.notion.com/" target="_blank" rel="noopener noreferrer">Notion</a>
+: entrambi fanno più o meno quello che mi serve e sono piuttosto interessanti, però hanno entrambi la barriera dell&rsquo;account. Certo, avere un account significa che da qualche parte su Internet c&rsquo;è un <em>caveau</em> che contiene i miei progetti e le mie idee, ma significa anche che dovrei cedere alcuni dei miei dati personali all&rsquo;ennesima azienda che potrebbe usarli a mia insaputa per i suoi interessi.  Da qui ho capito che mi occorreva una soluzione locale che potessi eventualmente salvare in remoto.</p>
+<p>Localmente, a meno di ingegneria sociale, non ci sono aziende con cui barattare i miei dati per poter utilizzare un servizio. Ecco che giunge in mio aiuto <a href="https://logseq.com/" target="_blank" rel="noopener noreferrer">Logseq</a>
+, un software che mi permette di prendere appunti, creare istantaneamente una base di conoscenza e interrogarla all&rsquo;evenienza, gestire i miei progetti e il loro andamento e, in sostanza, <strong>delegare</strong> per avere la mente più sgombra.</p>
+<h2 id="funziona">Funziona?</h2>
+<p>Lo uso da circa un mese, quasi quotidianamente, per tenere traccia di riunioni di lavoro, appunti universitari e progetti personali. Ho soltanto raschiato la superficie dell&rsquo;universo di possibilità che questo software offre ma mi ci sto trovando molto bene. In particolare, è piuttosto soddisfacente la <strong>Graph view</strong>, con cui si possono visualizzare tutti i collegamenti tra le varie attività.</p>
+<p><img src="/images/logseq-graph.png" alt="alt text"></p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>
