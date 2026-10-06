@@ -2,25 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://log.lrossi.xyz/</loc>
-    <lastmod>2026-10-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://log.lrossi.xyz/posts/</loc>
-    <lastmod>2026-10-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://log.lrossi.xyz/tags/</loc>
-    <lastmod>2026-10-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://log.lrossi.xyz/tags/test/</loc>
-    <lastmod>2026-10-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://log.lrossi.xyz/posts/test/</loc>
-    <lastmod>2026-10-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://log.lrossi.xyz/tags/angular/</loc>
     <lastmod>2026-10-04T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://log.lrossi.xyz/tags/github/</loc>
+    <lastmod>2026-10-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://log.lrossi.xyz/tags/google-api/</loc>
+    <lastmod>2026-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://log.lrossi.xyz/tags/hugo/</loc>
+    <lastmod>2026-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://log.lrossi.xyz/posts/hugo-gh-pipeline/</loc>
+    <lastmod>2026-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://log.lrossi.xyz/</loc>
     <lastmod>2026-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://log.lrossi.xyz/tags/music/</loc>
@@ -29,22 +26,19 @@
     <loc>https://log.lrossi.xyz/tags/piping/</loc>
     <lastmod>2026-10-04T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://log.lrossi.xyz/posts/</loc>
+    <lastmod>2026-10-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://log.lrossi.xyz/projects/</loc>
+    <lastmod>2026-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://log.lrossi.xyz/tags/</loc>
     <lastmod>2026-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://log.lrossi.xyz/projects/tus.band/</loc>
     <lastmod>2026-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://log.lrossi.xyz/tags/hugo/</loc>
-    <lastmod>2026-09-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://log.lrossi.xyz/posts/primi-passi-con-hugo/</loc>
-    <lastmod>2026-09-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://log.lrossi.xyz/tags/logseq/</loc>
-    <lastmod>2026-09-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://log.lrossi.xyz/posts/logseq/</loc>
     <lastmod>2026-09-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://log.lrossi.xyz/tags/cv/</loc>

@@ -1,11 +1,4 @@
 [{
-    "title": "This is (NOT) a test!",
-    "url": "/posts/test/",
-    "date": "Oct 2026",
-    "summary": "Test per vedere se effettivamente il workflow GitHub funziona.",
-    "section": "posts",
-    "tags": ["test"]
-  },{
     "title": "tus.band",
     "url": "/projects/tus.band/",
     "date": "Oct 2026",
@@ -13,12 +6,12 @@
     "section": "projects",
     "tags": ["music","piping","angular","google-api"]
   },{
-    "title": "Logseq: verso l'ordine mentale",
-    "url": "/posts/logseq/",
-    "date": "Sep 2026",
-    "summary": "Come uso Logseq per organizzare i miei pensieri.",
+    "title": "Hugo: dallo sviluppo locale al deploy automatico",
+    "url": "/posts/hugo-gh-pipeline/",
+    "date": "Oct 2026",
+    "summary": "Pipeline per il deploy automatico di un sito statico con Hugo.",
     "section": "posts",
-    "tags": ["logseq"]
+    "tags": ["hugo","github"]
   },{
     "title": "Hugo: primi passi",
     "url": "/posts/primi-passi-con-hugo/",

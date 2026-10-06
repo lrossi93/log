@@ -1,7 +1,7 @@
 +++
 title = "Logseq: verso l'ordine mentale"
 date = 2026-09-28
-draft = false
+draft = true
 description = "Used for <meta description> / OpenGraph if summary is empty."
 summary = "Come uso Logseq per organizzare i miei pensieri."
 tags = ["logseq"]

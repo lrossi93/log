@@ -10,17 +10,9 @@
 		
 		
 		
-			<lastBuildDate>Mon, 05 Oct 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://log.lrossi.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>Test</title>
-				<link>https://log.lrossi.xyz/tags/test/</link>
-				<pubDate>Mon, 05 Oct 2026 00:00:00 +0000</pubDate>
-				<guid>https://log.lrossi.xyz/tags/test/</guid>
-				<description></description>
-				<content:encoded><![CDATA[]]></content:encoded>
-			</item>
 			<item>
 				<title>Angular</title>
 				<link>https://log.lrossi.xyz/tags/angular/</link>
@@ -30,10 +22,26 @@
 				<content:encoded><![CDATA[]]></content:encoded>
 			</item>
 			<item>
+				<title>Github</title>
+				<link>https://log.lrossi.xyz/tags/github/</link>
+				<pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://log.lrossi.xyz/tags/github/</guid>
+				<description></description>
+				<content:encoded><![CDATA[]]></content:encoded>
+			</item>
+			<item>
 				<title>Google-Api</title>
 				<link>https://log.lrossi.xyz/tags/google-api/</link>
 				<pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
 				<guid>https://log.lrossi.xyz/tags/google-api/</guid>
+				<description></description>
+				<content:encoded><![CDATA[]]></content:encoded>
+			</item>
+			<item>
+				<title>Hugo</title>
+				<link>https://log.lrossi.xyz/tags/hugo/</link>
+				<pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://log.lrossi.xyz/tags/hugo/</guid>
 				<description></description>
 				<content:encoded><![CDATA[]]></content:encoded>
 			</item>
@@ -50,22 +58,6 @@
 				<link>https://log.lrossi.xyz/tags/piping/</link>
 				<pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
 				<guid>https://log.lrossi.xyz/tags/piping/</guid>
-				<description></description>
-				<content:encoded><![CDATA[]]></content:encoded>
-			</item>
-			<item>
-				<title>Hugo</title>
-				<link>https://log.lrossi.xyz/tags/hugo/</link>
-				<pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
-				<guid>https://log.lrossi.xyz/tags/hugo/</guid>
-				<description></description>
-				<content:encoded><![CDATA[]]></content:encoded>
-			</item>
-			<item>
-				<title>Logseq</title>
-				<link>https://log.lrossi.xyz/tags/logseq/</link>
-				<pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
-				<guid>https://log.lrossi.xyz/tags/logseq/</guid>
 				<description></description>
 				<content:encoded><![CDATA[]]></content:encoded>
 			</item>

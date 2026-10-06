@@ -1,9 +1,9 @@
 +++
 date = '2026-10-04'
-draft = true
-title = "Da Hugo locale alla pubblicazione su GitHub Pages"
-description = "Sistema per la pubblicazione automatica di articoli su framework Hugo."
-summary = "Sistema per la pubblicazione automatica di articoli su framework Hugo."
+draft = false
+title = "Hugo: dallo sviluppo locale al deploy automatico"
+description = "Pipeline per il deploy automatico di un sito statico con Hugo."
+summary = "Pipeline per il deploy automatico di un sito statico con Hugo."
 tags = ["hugo", "github"]
 +++
 
@@ -172,3 +172,8 @@ disableLanguages = []
 ```
 
 ## Conclusioni
+La pipeline funziona egregiamente: il sito si aggiorna ad ogni commit+push di nuovi contenuti e io ho già iniziato a risparmiare tempo, anche se sento di dover ancora padroneggiare sia la struttura di progetti Hugo, sia GitHub Actions.
+
+## Sviluppi futuri
+- Verificare che questo tema sia adatto al mio utilizzo e, eventualmente, adattarlo o sostituirlo;
+- Individuare uno stack web grazie a cui utenti senza (o con poche) basi informatiche possano usare Hugo come CMS.

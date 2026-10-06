@@ -10,17 +10,207 @@
 		
 		
 		
-			<lastBuildDate>Mon, 05 Oct 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://log.lrossi.xyz/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>This is (NOT) a test!</title>
-				<link>https://log.lrossi.xyz/posts/test/</link>
-				<pubDate>Mon, 05 Oct 2026 00:00:00 +0000</pubDate>
-				<guid>https://log.lrossi.xyz/posts/test/</guid>
-				<description>Test per vedere se effettivamente il workflow GitHub funziona.</description>
-				<content:encoded><![CDATA[<h2 id="il-test-ha-funzionato">Il test ha funzionato?</h2>
-<p>Se leggi questo testo, molto probabilmente sì.</p>
+				<title>Hugo: dallo sviluppo locale al deploy automatico</title>
+				<link>https://log.lrossi.xyz/posts/hugo-gh-pipeline/</link>
+				<pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://log.lrossi.xyz/posts/hugo-gh-pipeline/</guid>
+				<description>Pipeline per il deploy automatico di un sito statico con Hugo.</description>
+				<content:encoded><![CDATA[<h2 id="introduzione">Introduzione</h2>
+<p>Una volta seguita la documentazione del tema <a href="https://github.com/omegion/hugo-omegion" target="_blank" rel="noopener noreferrer">Omegion</a>
+ e avere deciso di suddividere i contenuti tra articoli (<em>Idee e riflessioni</em>) e lavori (<em>Progetti</em>), ora è il momento di realizzare la pipeline che mi permette, una volta che un articolo è terminato, di pubblicarlo automaticamente all&rsquo;indirizzo <a href="https://log.lrossi.xyz">log.lrossi.xyz</a>
+.</p>
+<p>Questo avviene utilizzando non solo l&rsquo;utile funzionalità di <a href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">GitHub Pages</a>
+ per l&rsquo;hosting statico, ma anche <a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a>
+ per automatizzare il rendering di un sito statico realizzato con framework <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a>
+.</p>
+<h2 id="la-pipeline">La pipeline</h2>
+<p>La sequenza di azioni che voglio compiere, per minimizzare i miei oneri, è la seguente: scrittura di contenuti, push su repository GitHub del sorgente aggiornato, compilazione dei sorgenti e creazione del sito statico tramite script GitHub Actions, pubblicazione del sito statico tramite GitHub Pages.</p>
+<h3 id="creazione-della-repository-su-github">Creazione della repository su GitHub</h3>
+<p>Nella working directory, nel mio caso specifico <code>log/</code>, si può inizializzare la repository locale con il comando <code>git init</code>. Tutti i sorgenti realizzati vanno aggiunti al pacchetto da sincronizzare con i comandi <code>git add .</code> e <code>git commit -m &quot;Initial commit&quot;</code>.</p>
+<p>Dopodiché va creata la repository remota sul profilo personale GitHub. Per permettere la pubblicazione con GitHub Pages, la repository deve necessariamente essere pubblica e, in fase di creazione, può essere vuota. Una volta creata, è possibile sincronizzare la repository remota con quella locale inizializzata al passaggio precedente con i seguenti comandi da terminale:</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">text</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git remote add origin git@github.com:&lt;username&gt;/&lt;repository-name&gt;.git
+</span></span><span style="display:flex;"><span>git branch -M main
+</span></span><span style="display:flex;"><span>git push -u origin main</span></span></code></pre></div>
+</div>
+<p>GitHub, in questo, ci guida passo passo. Se tutto è andato liscio, a questo punto la repository locale e quella remota su GitHub dovrebbero avere gli stessi identici contenuti.</p>
+<h3 id="pubblicazione-su-github-pages">Pubblicazione su GitHub Pages</h3>
+<p>Una volta che il sito è integralmente su repository remota, si può esporre su un dominio come <code>&lt;username&gt;.github.io/&lt;repository&gt;</code>. Seguendo le istruzioni presenti nella <a href="https://docs.github.com/en/pages/getting-started-with-github-pages" target="_blank" rel="noopener noreferrer">documentazione di GitHub Pages</a>
+, il sito non dovrebbe risultare disponibile all&rsquo;URL <code>&lt;username&gt;.github.io/&lt;repository&gt;</code>, perché GitHub Pages cerca un <code>index.html</code> da esporre, il quale però non è presente nella root di progetto. Occorre indicare che il deploy del sito deve essere fatto da una specifica directory, in particolare dalla directory <code>public</code>, che viene creata solo dopo aver compilato i sorgenti locali con il comando <code>hugo</code> da terminale.</p>
+<p>A questo punto, è essenziale creare uno script di compilazione lato GitHub per fare il deploy dalla directory <code>public</code>.</p>
+<h3 id="deploy-automatico-con-github-actions">Deploy automatico con GitHub Actions</h3>
+<p>Una volta su GitHub, nella repository del progetto corrente, occorre navigare su <strong>Actions</strong> e cliccare sul pulsante <strong>New workflow</strong>, dato che un workflow è la sequenza di azioni che, partendo dal sorgente committato nei passaggi precedenti, pubblicano il sito finale compilandolo come si farebbe da terminale, ma in maniera automatica.</p>
+<p>Si può partire da un file di workflow per Hugo predefinito, che ho opportunamente modificato per allineare la versione di Hugo remota con quella locale.</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">yaml</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Sample workflow for building and deploying a Hugo site to GitHub Pages</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy Hugo site to Pages</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Runs on pushes targeting the default branch</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>: [<span style="color:#e6db74">&#34;main&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Allows you to run this workflow manually from the Actions tab</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">workflow_dispatch</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">permissions</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">contents</span>: <span style="color:#ae81ff">read</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">pages</span>: <span style="color:#ae81ff">write</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">id-token</span>: <span style="color:#ae81ff">write</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">concurrency</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">group</span>: <span style="color:#e6db74">&#34;pages&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">cancel-in-progress</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Default to bash</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">defaults</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">run</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">shell</span>: <span style="color:#ae81ff">bash</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Build job</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">HUGO_VERSION</span>: <span style="color:#ae81ff">0.165.0</span> <span style="color:#75715e"># &lt;-- La mia unica modifica...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Hugo CLI</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &amp;&amp; sudo dpkg -i ${{ runner.temp }}/hugo.deb</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Dart Sass</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">sudo snap install dart-sass</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v4</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">submodules</span>: <span style="color:#ae81ff">recursive</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Pages</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">id</span>: <span style="color:#ae81ff">pages</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/configure-pages@v5</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Node.js dependencies</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: <span style="color:#e6db74">&#34;[[ -f package-lock.json || -f npm-shrinkwrap.json ]] &amp;&amp; npm ci || true&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build with Hugo</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">HUGO_CACHEDIR</span>: <span style="color:#ae81ff">${{ runner.temp }}/hugo_cache</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">HUGO_ENVIRONMENT</span>: <span style="color:#ae81ff">production</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          hugo \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            --minify \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            --baseURL &#34;${{ steps.pages.outputs.base_url }}/&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Upload artifact</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/upload-pages-artifact@v3</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">path</span>: <span style="color:#ae81ff">./public</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Deployment job</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deploy</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">github-pages</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#ae81ff">${{ steps.deployment.outputs.page_url }}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">needs</span>: <span style="color:#ae81ff">build</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy to GitHub Pages</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">id</span>: <span style="color:#ae81ff">deployment</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/deploy-pages@v5</span></span></span></code></pre></div>
+</div>
+<p>Ho scoperto, a questo punto, che il mio file di configurazione <code>hugo.toml</code> era scritto male per via di errori di compilazione dovuti alla scelta della lingua (che, per quanto riguarda la scrittura dei contenuti, ho scelto essere l&rsquo;italiano), quindi ho dovuto riscriverlo un po&rsquo; meglio separando le variabili scalari da quelle vettoriali, raggruppando opportunamente queste ultime. Questo è quello che ha funzionato per me:</p>
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-lang">toml</span>
+    <button type="button" class="code-copy" aria-label="Copy code">
+      <span class="code-copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+</span>
+      <span class="code-copy-icon code-copy-icon-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</span>
+      <span class="code-copy-label">Copy</span>
+    </button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#39;https://log.lrossi.xyz/&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">locale</span> = <span style="color:#e6db74">&#39;it&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#39;log.lrossi.xyz&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#39;hugo-omegion&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">defaultContentLanguage</span> = <span style="color:#e6db74">&#39;it&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">defaultContentLanguageInSubdir</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">disableDefaultLanguageRedirect</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">disableLanguages</span> = []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">languages</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">languages</span>.<span style="color:#a6e22e">it</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">label</span> = <span style="color:#e6db74">&#34;italiano&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;log.lrossi.xyz&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">enableSearch</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;Breve descrizione del sito&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">author</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Lorenzo Rossi&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">bio</span> = [
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Musician, programmer, creative time waster.&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Raccolgo qui idee, riflessioni e progetti che non interessano a nessuno.&#34;</span>
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    [[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">author</span>.<span style="color:#a6e22e">links</span>]]
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;GitHub&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;https://github.com/lrossi93&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">icon</span> = <span style="color:#e6db74">&#34;github&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    [[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">author</span>.<span style="color:#a6e22e">links</span>]]
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;LinkedIn&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;https://www.linkedin.com/in/lrossi1993&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">icon</span> = <span style="color:#e6db74">&#34;linkedin&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    [[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">author</span>.<span style="color:#a6e22e">links</span>]]
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;e-mail&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;mailto:lrossi93@proton.me&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">icon</span> = <span style="color:#e6db74">&#34;mail&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">outputs</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">home</span> = [<span style="color:#e6db74">&#34;html&#34;</span>, <span style="color:#e6db74">&#34;rss&#34;</span>, <span style="color:#e6db74">&#34;searchindex&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">outputFormats</span>.<span style="color:#a6e22e">searchindex</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mediaType</span> = <span style="color:#e6db74">&#34;application/json&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">baseName</span> = <span style="color:#e6db74">&#34;index&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">isPlainText</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">notAlternative</span> = <span style="color:#66d9ef">true</span></span></span></code></pre></div>
+</div>
+<h2 id="conclusioni">Conclusioni</h2>
+<p>La pipeline funziona egregiamente: il sito si aggiorna ad ogni commit+push di nuovi contenuti e io ho già iniziato a risparmiare tempo, anche se sento di dover ancora padroneggiare sia la struttura di progetti Hugo, sia GitHub Actions.</p>
+<h2 id="sviluppi-futuri">Sviluppi futuri</h2>
+<ul>
+<li>Verificare che questo tema sia adatto al mio utilizzo e, eventualmente, adattarlo o sostituirlo;</li>
+<li>Individuare uno stack web grazie a cui utenti senza (o con poche) basi informatiche possano usare Hugo come CMS.</li>
+</ul>
 ]]></content:encoded>
 			</item>
 			<item>
@@ -293,24 +483,6 @@
 <li><a href="https://www.giraffeacademy.com/static-site-generators/hugo/" target="_blank" rel="noopener noreferrer">Corso Hugo di Giraffe Academy</a>
 </li>
 </ul>
-]]></content:encoded>
-			</item>
-			<item>
-				<title>Logseq: verso l&#39;ordine mentale</title>
-				<link>https://log.lrossi.xyz/posts/logseq/</link>
-				<pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
-				<guid>https://log.lrossi.xyz/posts/logseq/</guid>
-				<description>Come uso Logseq per organizzare i miei pensieri.</description>
-				<content:encoded><![CDATA[<h2 id="perché-logseq">Perché logseq?</h2>
-<p>Ho molti pensieri, sempre. Questo ogni tanto mi porta sia a vivermi meno il momento presente, sia a perdermi delle idee che potrebbero essere sviluppate e diventare progetti interessanti. Ho pensato a quale strumento potesse aiutarmi a visualizzare i collegamenti tra i vari ambiti che mi riguardano, in modo da trovare più rapidamente le connessioni tra le mie varie attività. La mia deformazione etico/professionale mi spinge a evitare software proprietario o che usi i dati personali come valuta.</p>
-<p>Informandomi, ho pensato a <a href="https://obsidian.md/" target="_blank" rel="noopener noreferrer">Obsidian</a>
- e a <a href="https://www.notion.com/" target="_blank" rel="noopener noreferrer">Notion</a>
-: entrambi fanno più o meno quello che mi serve e sono piuttosto interessanti, però hanno entrambi la barriera dell&rsquo;account. Certo, avere un account significa che da qualche parte su Internet c&rsquo;è un <em>caveau</em> che contiene i miei progetti e le mie idee, ma significa anche che dovrei cedere alcuni dei miei dati personali all&rsquo;ennesima azienda che potrebbe usarli a mia insaputa per i suoi interessi.  Da qui ho capito che mi occorreva una soluzione locale che potessi eventualmente salvare in remoto.</p>
-<p>Localmente, a meno di ingegneria sociale, non ci sono aziende con cui barattare i miei dati per poter utilizzare un servizio. Ecco che giunge in mio aiuto <a href="https://logseq.com/" target="_blank" rel="noopener noreferrer">Logseq</a>
-, un software che mi permette di prendere appunti, creare istantaneamente una base di conoscenza e interrogarla all&rsquo;evenienza, gestire i miei progetti e il loro andamento e, in sostanza, <strong>delegare</strong> per avere la mente più sgombra.</p>
-<h2 id="funziona">Funziona?</h2>
-<p>Lo uso da circa un mese, quasi quotidianamente, per tenere traccia di riunioni di lavoro, appunti universitari e progetti personali. Ho soltanto raschiato la superficie dell&rsquo;universo di possibilità che questo software offre ma mi ci sto trovando molto bene. In particolare, è piuttosto soddisfacente la <strong>Graph view</strong>, con cui si possono visualizzare tutti i collegamenti tra le varie attività.</p>
-<p><img src="/images/logseq-graph.png" alt="alt text"></p>
 ]]></content:encoded>
 			</item>
 			<item>
