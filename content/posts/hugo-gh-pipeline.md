@@ -176,4 +176,5 @@ La pipeline funziona egregiamente: il sito si aggiorna ad ogni commit+push di nu
 
 ## Sviluppi futuri
 - Verificare che questo tema sia adatto al mio utilizzo e, eventualmente, adattarlo o sostituirlo;
-- Individuare uno stack web grazie a cui utenti senza (o con poche) basi informatiche possano usare Hugo come CMS.
+- Individuare uno stack web grazie a cui utenti senza (o con poche) basi informatiche possano usare Hugo come CMS;
+- Sfruttare la pubblicazione di articoli come trigger per l'invio di newsletter con il medesimo contenuto.

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
 	<channel>
 		<title>Hugo on log.lrossi.xyz</title>
-		<link>https://log.lrossi.xyz/tags/hugo/</link>
+		<link>http://localhost:1313/tags/hugo/</link>
 		<description>Recent content in Hugo on log.lrossi.xyz</description>
 		<generator>Hugo</generator>
 		<language>it</language>
@@ -12,16 +12,16 @@
 		
 			<lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://log.lrossi.xyz/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Hugo: dallo sviluppo locale al deploy automatico</title>
-				<link>https://log.lrossi.xyz/posts/hugo-gh-pipeline/</link>
+				<link>http://localhost:1313/posts/hugo-gh-pipeline/</link>
 				<pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
-				<guid>https://log.lrossi.xyz/posts/hugo-gh-pipeline/</guid>
+				<guid>http://localhost:1313/posts/hugo-gh-pipeline/</guid>
 				<description>Pipeline per il deploy automatico di un sito statico con Hugo.</description>
 				<content:encoded><![CDATA[<h2 id="introduzione">Introduzione</h2>
 <p>Una volta seguita la documentazione del tema <a href="https://github.com/omegion/hugo-omegion" target="_blank" rel="noopener noreferrer">Omegion</a>
- e avere deciso di suddividere i contenuti tra articoli (<em>Idee e riflessioni</em>) e lavori (<em>Progetti</em>), ora è il momento di realizzare la pipeline che mi permette, una volta che un articolo è terminato, di pubblicarlo automaticamente all&rsquo;indirizzo <a href="https://log.lrossi.xyz">log.lrossi.xyz</a>
+ e avere deciso di suddividere i contenuti tra articoli (<em>Idee e riflessioni</em>) e lavori (<em>Progetti</em>), ora è il momento di realizzare la pipeline che mi permette, una volta che un articolo è terminato, di pubblicarlo automaticamente all&rsquo;indirizzo <a href="https://log.lrossi.xyz" target="_blank" rel="noopener noreferrer">log.lrossi.xyz</a>
 .</p>
 <p>Questo avviene utilizzando non solo l&rsquo;utile funzionalità di <a href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">GitHub Pages</a>
  per l&rsquo;hosting statico, ma anche <a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a>
@@ -209,15 +209,16 @@
 <h2 id="sviluppi-futuri">Sviluppi futuri</h2>
 <ul>
 <li>Verificare che questo tema sia adatto al mio utilizzo e, eventualmente, adattarlo o sostituirlo;</li>
-<li>Individuare uno stack web grazie a cui utenti senza (o con poche) basi informatiche possano usare Hugo come CMS.</li>
+<li>Individuare uno stack web grazie a cui utenti senza (o con poche) basi informatiche possano usare Hugo come CMS;</li>
+<li>Sfruttare la pubblicazione di articoli come trigger per l&rsquo;invio di newsletter con il medesimo contenuto.</li>
 </ul>
 ]]></content:encoded>
 			</item>
 			<item>
 				<title>Hugo: primi passi</title>
-				<link>https://log.lrossi.xyz/posts/primi-passi-con-hugo/</link>
+				<link>http://localhost:1313/posts/primi-passi-con-hugo/</link>
 				<pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
-				<guid>https://log.lrossi.xyz/posts/primi-passi-con-hugo/</guid>
+				<guid>http://localhost:1313/posts/primi-passi-con-hugo/</guid>
 				<description>Un tentativo di replica della guida &lt;em&gt;quickstart&lt;/em&gt; di Hugo.</description>
 				<content:encoded><![CDATA[<h2 id="introduzione">Introduzione</h2>
 <p>Questo è il primo di una serie di articoli sul mio viaggio nella tecnologia. In questo, parlerò di <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a>

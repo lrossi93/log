@@ -15,9 +15,9 @@
 			<atom:link href="http://localhost:1313/tags/test/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>This is (NOT) a test!</title>
-				<link>http://localhost:1313/posts/test/</link>
+				<link>http://localhost:1313/posts/template/</link>
 				<pubDate>Mon, 05 Oct 2026 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/posts/test/</guid>
+				<guid>http://localhost:1313/posts/template/</guid>
 				<description>Test per vedere se effettivamente il workflow GitHub funziona.</description>
 				<content:encoded><![CDATA[<h2 id="il-test-ha-funzionato">Il test ha funzionato?</h2>
 <p>Se leggi questo testo, molto probabilmente sì.</p>

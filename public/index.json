@@ -1,4 +1,11 @@
 [{
+    "title": "This is (NOT) a test!",
+    "url": "/posts/template/",
+    "date": "Oct 2026",
+    "summary": "Test per vedere se effettivamente il workflow GitHub funziona.",
+    "section": "posts",
+    "tags": ["test"]
+  },{
     "title": "tus.band",
     "url": "/projects/tus.band/",
     "date": "Oct 2026",
@@ -12,6 +19,20 @@
     "summary": "Pipeline per il deploy automatico di un sito statico con Hugo.",
     "section": "posts",
     "tags": ["hugo","github"]
+  },{
+    "title": "AI and Education: un report dell'MIT",
+    "url": "/posts/ai-and-education/",
+    "date": "Oct 2026",
+    "summary": "Riflessioni su effetti e ripercussioni dell'AI sull'istruzione.",
+    "section": "posts",
+    "tags": ["ai","education","mit"]
+  },{
+    "title": "Logseq: riordiniamo il caos",
+    "url": "/posts/logseq/",
+    "date": "Sep 2026",
+    "summary": "Come uso Logseq per organizzare i miei pensieri.",
+    "section": "posts",
+    "tags": ["logseq","open-source"]
   },{
     "title": "Hugo: primi passi",
     "url": "/posts/primi-passi-con-hugo/",
