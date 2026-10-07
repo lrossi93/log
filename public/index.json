@@ -11,7 +11,7 @@
     "date": "Oct 2026",
     "summary": "Sito della mia band trad folk.",
     "section": "projects",
-    "tags": ["music","piping","angular","google-api"]
+    "tags": ["angular","google-api"]
   },{
     "title": "Hugo: dallo sviluppo locale al deploy automatico",
     "url": "/posts/hugo-gh-pipeline/",
@@ -46,12 +46,12 @@
     "date": "Jul 2026",
     "summary": "Sito statico personale per promuovere le mie attività di musicista e consulente informatico.",
     "section": "projects",
-    "tags": ["cv","angular","website","it","music","piping"]
+    "tags": ["cv","angular"]
   },{
     "title": "celticknot.it",
     "url": "/projects/celticknot.it/",
     "date": "Oct 2024",
     "summary": "Sito statico per promuovere le attività musicali di Celtic Knot Pipes and Drums, la mia banda di cornamuse e percussioni scozzesi.",
     "section": "projects",
-    "tags": ["angular","website","music","piping","google-api"]
+    "tags": ["angular","google-api"]
   }]

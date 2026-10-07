@@ -22,7 +22,7 @@ disableLanguages = []
     name = "Lorenzo Rossi"
     bio = [
       "Musician, programmer, creative time waster.",
-      "Raccolgo qui idee, riflessioni e progetti che non interessano a nessuno."
+      # "Raccolgo qui idee, riflessioni e progetti che non interessano a nessuno."
     ]
 
     [[params.author.links]]
@@ -30,10 +30,10 @@ disableLanguages = []
       url = "https://github.com/lrossi93"
       icon = "github"
 
-    [[params.author.links]]
-      name = "LinkedIn"
-      url = "https://www.linkedin.com/in/lrossi1993"
-      icon = "linkedin"
+    # [[params.author.links]]
+    #   name = "LinkedIn"
+    #   url = "https://www.linkedin.com/in/lrossi1993"
+    #   icon = "linkedin"
 
     [[params.author.links]]
       name = "e-mail"

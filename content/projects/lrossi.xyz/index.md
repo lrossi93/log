@@ -9,7 +9,7 @@ website: "https://lrossi.xyz"     # optional
                             # instead of to its own page; also used to
                             # infer website/github links if not set above
 summary: "Sito statico personale per promuovere le mie attività di musicista e consulente informatico."
-tags: ["cv", "angular", "website", "it", "music", "piping"]
+tags: ["cv", "angular"]
 discontinued: false                    # optional
 # discontinuedDate: "2025-01-01"          # optional
 # discontinuedReason: "Why it ended."   # optional, markdown

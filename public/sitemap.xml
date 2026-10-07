@@ -32,12 +32,6 @@
     <loc>http://localhost:1313/posts/hugo-gh-pipeline/</loc>
     <lastmod>2026-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/music/</loc>
-    <lastmod>2026-10-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/piping/</loc>
-    <lastmod>2026-10-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/projects/</loc>
     <lastmod>2026-10-04T00:00:00+00:00</lastmod>
   </url><url>
@@ -71,13 +65,7 @@
     <loc>http://localhost:1313/tags/cv/</loc>
     <lastmod>2026-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/it/</loc>
-    <lastmod>2026-07-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/projects/lrossi.xyz/</loc>
-    <lastmod>2026-07-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/website/</loc>
     <lastmod>2026-07-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/celticknot.it/</loc>

@@ -54,22 +54,6 @@
 				<content:encoded><![CDATA[]]></content:encoded>
 			</item>
 			<item>
-				<title>Music</title>
-				<link>http://localhost:1313/tags/music/</link>
-				<pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/music/</guid>
-				<description></description>
-				<content:encoded><![CDATA[]]></content:encoded>
-			</item>
-			<item>
-				<title>Piping</title>
-				<link>http://localhost:1313/tags/piping/</link>
-				<pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/piping/</guid>
-				<description></description>
-				<content:encoded><![CDATA[]]></content:encoded>
-			</item>
-			<item>
 				<title>Ai</title>
 				<link>http://localhost:1313/tags/ai/</link>
 				<pubDate>Fri, 02 Oct 2026 11:42:46 +0200</pubDate>
@@ -114,22 +98,6 @@
 				<link>http://localhost:1313/tags/cv/</link>
 				<pubDate>Thu, 30 Jul 2026 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/tags/cv/</guid>
-				<description></description>
-				<content:encoded><![CDATA[]]></content:encoded>
-			</item>
-			<item>
-				<title>It</title>
-				<link>http://localhost:1313/tags/it/</link>
-				<pubDate>Thu, 30 Jul 2026 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/it/</guid>
-				<description></description>
-				<content:encoded><![CDATA[]]></content:encoded>
-			</item>
-			<item>
-				<title>Website</title>
-				<link>http://localhost:1313/tags/website/</link>
-				<pubDate>Thu, 30 Jul 2026 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/website/</guid>
 				<description></description>
 				<content:encoded><![CDATA[]]></content:encoded>
 			</item>
