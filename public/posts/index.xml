@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
 	<channel>
 		<title>Posts on log.lrossi.xyz</title>
-		<link>https://log.lrossi.xyz/posts/</link>
+		<link>http://localhost:1313/posts/</link>
 		<description>Recent content in Posts on log.lrossi.xyz</description>
 		<generator>Hugo</generator>
 		<language>it</language>
@@ -10,18 +10,28 @@
 		
 		
 		
-			<lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Mon, 05 Oct 2026 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://log.lrossi.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>This is (NOT) a test!</title>
+				<link>http://localhost:1313/posts/template/</link>
+				<pubDate>Mon, 05 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/template/</guid>
+				<description>Test per vedere se effettivamente il workflow GitHub funziona.</description>
+				<content:encoded><![CDATA[<h2 id="il-test-ha-funzionato">Il test ha funzionato?</h2>
+<p>Se leggi questo testo, molto probabilmente sì.</p>
+]]></content:encoded>
+			</item>
 			<item>
 				<title>Hugo: dallo sviluppo locale al deploy automatico</title>
-				<link>https://log.lrossi.xyz/posts/hugo-gh-pipeline/</link>
+				<link>http://localhost:1313/posts/hugo-gh-pipeline/</link>
 				<pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
-				<guid>https://log.lrossi.xyz/posts/hugo-gh-pipeline/</guid>
+				<guid>http://localhost:1313/posts/hugo-gh-pipeline/</guid>
 				<description>Pipeline per il deploy automatico di un sito statico con Hugo.</description>
 				<content:encoded><![CDATA[<h2 id="introduzione">Introduzione</h2>
 <p>Una volta seguita la documentazione del tema <a href="https://github.com/omegion/hugo-omegion" target="_blank" rel="noopener noreferrer">Omegion</a>
- e avere deciso di suddividere i contenuti tra articoli (<em>Idee e riflessioni</em>) e lavori (<em>Progetti</em>), ora è il momento di realizzare la pipeline che mi permette, una volta che un articolo è terminato, di pubblicarlo automaticamente all&rsquo;indirizzo <a href="https://log.lrossi.xyz">log.lrossi.xyz</a>
+ e avere deciso di suddividere i contenuti tra articoli (<em>Idee e riflessioni</em>) e lavori (<em>Progetti</em>), ora è il momento di realizzare la pipeline che mi permette, una volta che un articolo è terminato, di pubblicarlo automaticamente all&rsquo;indirizzo <a href="https://log.lrossi.xyz" target="_blank" rel="noopener noreferrer">log.lrossi.xyz</a>
 .</p>
 <p>Questo avviene utilizzando non solo l&rsquo;utile funzionalità di <a href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">GitHub Pages</a>
  per l&rsquo;hosting statico, ma anche <a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a>
@@ -215,10 +225,26 @@
 ]]></content:encoded>
 			</item>
 			<item>
+				<title>AI and Education: un report dell&#39;MIT</title>
+				<link>http://localhost:1313/posts/ai-and-education/</link>
+				<pubDate>Fri, 02 Oct 2026 11:42:46 +0200</pubDate>
+				<guid>http://localhost:1313/posts/ai-and-education/</guid>
+				<description>Riflessioni su effetti e ripercussioni dell&amp;rsquo;AI sull&amp;rsquo;istruzione.</description>
+				<content:encoded><![CDATA[<h2 id="introduzione">Introduzione</h2>
+<h2 id="fonti">Fonti</h2>
+<ul>
+<li><a href="https://aiandeducation.mit.edu/report/" target="_blank" rel="noopener noreferrer">Leggi il report completo</a>
+</li>
+<li><a href="https://computing.mit.edu/cross-cutting/social-and-ethical-responsibilities-of-computing/" target="_blank" rel="noopener noreferrer">Social and Ethical Responsibilities of Computing</a>
+</li>
+</ul>
+]]></content:encoded>
+			</item>
+			<item>
 				<title>Hugo: primi passi</title>
-				<link>https://log.lrossi.xyz/posts/primi-passi-con-hugo/</link>
+				<link>http://localhost:1313/posts/primi-passi-con-hugo/</link>
 				<pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
-				<guid>https://log.lrossi.xyz/posts/primi-passi-con-hugo/</guid>
+				<guid>http://localhost:1313/posts/primi-passi-con-hugo/</guid>
 				<description>Un tentativo di replica della guida &lt;em&gt;quickstart&lt;/em&gt; di Hugo.</description>
 				<content:encoded><![CDATA[<h2 id="introduzione">Introduzione</h2>
 <p>Questo è il primo di una serie di articoli sul mio viaggio nella tecnologia. In questo, parlerò di <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a>
@@ -476,6 +502,25 @@
 <li><a href="https://www.giraffeacademy.com/static-site-generators/hugo/" target="_blank" rel="noopener noreferrer">Corso Hugo di Giraffe Academy</a>
 </li>
 </ul>
+]]></content:encoded>
+			</item>
+			<item>
+				<title>Logseq: riordiniamo il caos</title>
+				<link>http://localhost:1313/posts/logseq/</link>
+				<pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/logseq/</guid>
+				<description>Come uso Logseq per organizzare i miei pensieri.</description>
+				<content:encoded><![CDATA[<h2 id="introduzione">Introduzione</h2>
+<p>Ho molti pensieri, sempre. Questo ogni tanto mi porta sia a vivermi meno il momento presente, sia a perdermi delle idee che potrebbero essere sviluppate e diventare progetti interessanti. Ho pensato a qualche strumento che potrebbe aiutarmi ad essere più efficiente e a visualizzare i collegamenti tra i contesti in cui opero quotidianamente, in modo da poter annotare e reperire più rapidamente informazioni sulle mie varie attività. La mia deformazione etico/professionale mi spinge naturalmente verso soluzioni open source.</p>
+<h2 id="cosa-esiste-già">Cosa esiste già?</h2>
+<p>Informandomi, ho pensato a <a href="https://obsidian.md/" target="_blank" rel="noopener noreferrer">Obsidian</a>
+ e a <a href="https://www.notion.com/" target="_blank" rel="noopener noreferrer">Notion</a>
+: entrambi fanno più o meno quello che mi serve e sono piuttosto interessanti, però hanno entrambi la barriera dell&rsquo;account. Certo, avere un account significa che da qualche parte su Internet c&rsquo;è un <em>caveau</em> che contiene i miei progetti e le mie idee, ma significa anche che dovrei cedere alcuni dei miei dati personali all&rsquo;ennesima azienda che potrebbe usarli a mia insaputa per i suoi interessi.  Da qui ho capito che mi occorreva una soluzione locale che potessi eventualmente salvare in remoto.</p>
+<p>Localmente, a meno di ingegneria sociale, non ci sono aziende con cui barattare i miei dati per poter utilizzare un servizio. Ecco che giunge in mio aiuto <a href="https://logseq.com/" target="_blank" rel="noopener noreferrer">Logseq</a>
+, un software che mi permette di prendere appunti, creare istantaneamente una base di conoscenza e interrogarla all&rsquo;evenienza, gestire i miei progetti e il loro andamento e, in sostanza, <strong>delegare</strong> per avere la mente più sgombra.</p>
+<h2 id="funziona">Funziona?</h2>
+<p>Lo uso da circa un mese, quasi quotidianamente, per tenere traccia di riunioni di lavoro, appunti universitari e progetti personali. Ho soltanto raschiato la superficie dell&rsquo;universo di possibilità che questo software offre ma mi ci sto trovando molto bene. In particolare, è piuttosto soddisfacente la <strong>Graph view</strong>, con cui si possono visualizzare tutti i collegamenti tra le varie attività.</p>
+<p><img src="/images/logseq-graph.png" alt="alt text"></p>
 ]]></content:encoded>
 			</item>
 	</channel>
