@@ -9,9 +9,9 @@ website: "https://lrossi.xyz"     # optional
                             # instead of to its own page; also used to
                             # infer website/github links if not set above
 summary: "Sito statico personale per promuovere le mie attività di musicista e consulente informatico."
-tags: ["cv", "angular"]
+tags: ["cv", "angular", "ui-ux", "ssg", "i18n"]
 discontinued: false                    # optional
 # discontinuedDate: "2025-01-01"          # optional
 # discontinuedReason: "Why it ended."   # optional, markdown
-lessonsLearned: "Ho copiato da altri siti autobiografici, intersecando le pratiche più comuni con le mie conoscenze."     # optional, markdown
+lessonsLearned: "UI/UX, i18n, SSG."     # optional, markdown
 ---

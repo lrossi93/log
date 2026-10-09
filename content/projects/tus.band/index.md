@@ -9,9 +9,9 @@ website: "https://tus.band"     # optional
                             # instead of to its own page; also used to
                             # infer website/github links if not set above
 summary: "Sito della mia band trad folk."
-tags: ["angular", "google-api"]
+tags: ["cv", "angular", "google-api", "ui-ux", "ssg", "i18n"]
 discontinued: false                    # optional
 # discontinuedDate: "2025-01-01"          # optional
-discontinuedReason: "Why it ended."   # optional, markdown
-# lessonsLearned: "What I learned."     # optional, markdown
+# discontinuedReason: "Why it ended."   # optional, markdown
+lessonsLearned: "Grafica Web moderna."     # optional, markdown
 ---
